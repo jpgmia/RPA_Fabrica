@@ -1,0 +1,133 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="InicializarBODesktopIntelligence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="466,793" sap2010:WorkflowViewState.IdRef="InicializarBODesktopIntelligence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="InicializarBODesktopIntelligence" sap:VirtualizedContainerService.HintSize="476,728" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Adjuntar BO Desktop Intelligence" sap:VirtualizedContainerService.HintSize="434,636" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="b1fbe84741b106fdb22fdb2106a7b00f" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Citrix XenApp - Aplicaciones - Internet Explorer - \\Remota' /&gt;">
+      <ui:WindowScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,490" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click BO Desktop Intelligence" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:ClickImage.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:ClickImage.CursorPosition>
+              <ui:ClickImage.Image>
+                <ui:ImageTarget Image="{x:Null}" Accuracy="0.7" Profile="Enhanced" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJgAAAAYCAYAAAAGcjT5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARfSURBVGhD7ZZPaF1FFMbdiKILNy7cuBVExI24zUZwI1UXT0HQTV0oEReiiFCF2IWouA1Fu2uppRGhfyxWSpPY1thWiKmpGkxrU/Jq9FkNTY0tEkZ/N/ku35s39+WS+GjU+cEhd845c+bMmY/X3hAymR6SBZbpKVlgmZ7SJrClpaXw6efT4fm3hsPTrx8K7+44FYa/PB++u/BL+GbmUpg41wonpubCZ5PNcHj8Qjh48oewd+xs+OjYdGGZTEyHwLDZuflCaI+/ciDc/uD2cP9Tu8Mb748lBYZlgWWq6PgnUiJr/jQfvvq2GbbtOVkIDKFhW7YdzwLL1Kbr/8GarYUw/rfIdh0YD/c+sbMU2aMv788Cy9RiVYFhYxMz4b09Y6XAsCdf+yQLLLMqXQX268IfhZ0593PYe+Tr8PALH7aJTAKTpRgYGAh9fX2ljY6OrkSWaTQabfEq4jrsWwtDQ0OFxQwODib9a4V+p6amVlZpiPf396+sqiGHXM+n3zp7rzfrEtjI6dk2S+GDRlw+FETCoATxKpHFD8a+boKs4r8isH8LbQJrjF8Lt+y6mLSb3/wi3PbYjnUJjAeUoPgmFkPcRSdSD4ZPuRInFotYfnCBsZ8463iv19Ne0H75q35JvV9q+h75tXaf9+v7+cbUH/V8TtpDXDmQmgt16I+1+4XyMZHqqw5tAntmYjHMLC4V9sHstfDq5JWwaaRVCOyOlw61iWvz1sO1BabG/DHwM6QYBkIsxh9MsF9+H5Jqx48A7vdzWOMH6vlw8as+3x6jRnwGeL/s1Vl+v7hvvrWHPMXk93zdAfCpdwkK4vqcSx5+csiVX9+8kb6Fzgfvqw6VAtt3cVlgfdtPhzuf3VcK6+7GzrBl8Hg4c77VYSl80PyVyHTZGC6gB3C8jmC/6jAwN4ZPLR8kkMuA4jNcYKrrqG9iyoOqgXu/cVxr4h6L76AzySHX8+lBAiPX8Zy4Jnuo4/fTnaruEtfwH4rVWFVgjxy7FO77+MfCbtx8MEw3f0taHYEBzbHmQvEjAgPQ4Jy4DuDTcFK1BENjMEAuPcRDWo/AUmd7v/GjaU3cY+oxhhxyPZ8eNKf4Lp6T6o067teduglsrXQIbP/cn4W9ffZqKbB7Ri4XhsBa84ulxSJL4YPmrzfLd/xYVZfxOsBag43rpmBw1NcwMR+mfBDX89x4H9/a53i/ng/xflFVCz+1MOWTJ4H5Pp9h1VzwpwQG5FPDqeqrDh0C2/r91dI2nfq9sFJgzx1pE5hbN4HRtExDF4jE41XEdXxAwAA8zjk8QJzvw1ScXD2GHlAPhfkvBHu9l7gPgV93VU3ha76po1zVxVxA6lF76UNx9Y4R9/qpuWDet8/E740J9+ncOnQITPbQiSuF3TV8uTQE9n/HH2MjgkBcYNebDoE9cHShNBdXFtgyG1Fg/ouKbSQ6BHbrO5OVdtOLR1cyM5l6tAksk/mnyQLL9JQssExPyQLL9JQssEwPCeEvX91sf4FEccwAAAAASUVORK5CYII=" />
+              </ui:ClickImage.Image>
+              <ui:ClickImage.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d6b7e8f4-1f34-41e2-ade4-f47e642e01f6">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:ClickImage.Target>
+            </ui:ClickImage>
+            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click BO Desktop Intelligence" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:ClickImage.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:ClickImage.CursorPosition>
+              <ui:ClickImage.Image>
+                <ui:ImageTarget Image="{x:Null}" Accuracy="0.7" Profile="Enhanced" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADMAAAARCAYAAABwxZQXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFJSURBVEhL3ZJpcoQgEIU5FN5m4C4ZvUrEk6TAg7jrFTo0JYrLRKhYmRQ/virozfekyTRNEAtxmRnHEWIhLjPDMIA3BQdCyEKSled1b8LfjDGSQFbaWAlZ8r8Mkb7v4RplhPNiF1cZJIRD4cbeiJ+Zl6LRpH4thecCOL5cgbV2DdVaa2bYFbWz5p5sXd9NTyCk6zq4RKVAaQrqkFOQUv1iAs9CC9OCbB32EAqpsjl71ggONFVrDxdLHI2KZX4Y/mZOP4JmXgjWCD4bNf32VWaMgX3PcUYIpG1buEaaF2BiF5cokoEwdwEMhUibd3o2dS77nv09DE8zGsH0H3UF4YeJXhd5fj8YdWstN5tpmga8ydHQuiosd/O5EcIYPc/L53bVWL70POV2xnoPI8zMj/xOyB2Quq7hHj7hoc18fJ3l/oa4zFRVBXFQwTck0eAB1DALyQAAAABJRU5ErkJggg==" />
+              </ui:ClickImage.Image>
+              <ui:ClickImage.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d6b7e8f4-1f34-41e2-ade4-f47e642e01f6">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:ClickImage.Target>
+            </ui:ClickImage>
+            <ui:WaitUiElementVanish WaitNotActive="{x:Null}" WaitNotVisible="{x:Null}" DisplayName="Wait Element Vanish 'wfica32.exe BO'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementVanish_1">
+              <ui:WaitUiElementVanish.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="57675ca3-3657-4109-8e51-a50810009ee8" InformativeScreenshot="d2b70f555fef27caa94e745813042893">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:WaitUiElementVanish.Target>
+            </ui:WaitUiElementVanish>
+          </Sequence>
+        </ActivityAction>
+      </ui:WindowScope.Body>
+    </ui:WindowScope>
+  </Sequence>
+</Activity>

@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "dgSpecHash": "184+Ndmakd1E7ct6cHZyNjdEIFXkLfjiJZWepomNJnk5nLPorARnc8noMN3rUYzwcZh5Q+VOzNNsen6/D3AeBA==",
+  "success": false,
+  "projectFilePath": "\\\\mordor\\desarrollo\\RPA\\Robots\\RPA_CANCELACION_SMART_DATE\\.local\\",
+  "expectedPackageFiles": [
+    "C:\\Users\\dbravo\\.nuget\\packages\\avalonedit\\5.0.3\\avalonedit.5.0.3.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\csvhelper\\2.13.5\\csvhelper.2.13.5.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\documentformat.openxml\\2.5.0\\documentformat.openxml.2.5.0.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\extended.wpf.toolkit\\2.8.0\\extended.wpf.toolkit.2.8.0.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\humanizer.core\\2.4.2\\humanizer.core.2.4.2.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\microsoft.aspnet.signalr.client\\2.4.0\\microsoft.aspnet.signalr.client.2.4.0.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\microsoft.rest.clientruntime\\2.3.20\\microsoft.rest.clientruntime.2.3.20.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\microsoft.visualstudio.ole.interop\\7.10.6071\\microsoft.visualstudio.ole.interop.7.10.6071.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\npoi\\2.4.1\\npoi.2.4.1.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\sharpziplib\\1.0.0\\sharpziplib.1.0.0.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\system.io.abstractions\\3.0.10\\system.io.abstractions.3.0.10.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\system.threading.tasks.dataflow\\4.10.0\\system.threading.tasks.dataflow.4.10.0.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\uipath\\20.4.7472.17184\\uipath.20.4.7472.17184.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\uipath.database.activities\\1.3.7369.25200\\uipath.database.activities.1.3.7369.25200.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\uipath.excel.activities\\2.8.6\\uipath.excel.activities.2.8.6.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\uipath.ocr.contracts\\2.6.0\\uipath.ocr.contracts.2.6.0.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\uipath.platform\\20.4.0\\uipath.platform.20.4.0.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\uipath.system.activities\\20.4.0\\uipath.system.activities.20.4.0.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\uipath.telemetry.client\\1.2.20\\uipath.telemetry.client.1.2.20.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\uipath.uiautomation.activities\\20.4.2\\uipath.uiautomation.activities.20.4.2.nupkg.sha512",
+    "C:\\Users\\dbravo\\.nuget\\packages\\uipath.vision\\2.0.3\\uipath.vision.2.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1102",
+      "level": "Error",
+      "filePath": "\\\\mordor\\desarrollo\\RPA\\Robots\\RPA_CANCELACION_SMART_DATE\\.local",
+      "message": "Unable to find package UiPath.Mail.Activities with version (= 1.9.3)\r\n  - Found 1 version(s) in C:\\Users\\dbravo\\AppData\\Local\\UiPath\\app-21.4.0\\Packages [ Nearest version: 1.10.3-preview ]\r\n  - Found 1 version(s) in Local [ Nearest version: 1.10.3-preview ]\r\n  - Found 0 version(s) in https://api.nuget.org/v3/index.json\r\n  - Found 0 version(s) in nuget.org\r\n  - Found 0 version(s) in https://gallery.uipath.com/api/v2\r\n  - Found 0 version(s) in Connect",
+      "libraryId": "UiPath.Mail.Activities",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.6.1",
+        ".NETFramework,Version=v4.6.1/win7-x86"
+      ]
+    }
+  ]
+}

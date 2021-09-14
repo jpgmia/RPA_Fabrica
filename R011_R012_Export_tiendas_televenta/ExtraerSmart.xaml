@@ -1,0 +1,948 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ExtraerSmart" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1028,851</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ExtraerSmart_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="36">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <StateMachine InitialState="{x:Reference __ReferenceID9}" DisplayName="ExtraerSmart" sap:VirtualizedContainerService.HintSize="1038,686" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <x:Double x:Key="StateContainerWidth">1003.5</x:Double>
+        <x:Double x:Key="StateContainerHeight">650.03200000000015</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">306,77.5 306,107.5 70,107.5 70,179.5</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <State x:Name="__ReferenceID0" DisplayName="Cerrar SMART" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_2">
+      <State.Entry>
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="476,615" sap2010:WorkflowViewState.IdRef="Sequence_62">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;cerrar smark&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'wfica32.exe Vodafone'" sap:VirtualizedContainerService.HintSize="434,392" sap2010:WorkflowViewState.IdRef="WindowScope_29" InformativeScreenshot="9b19c415ea5c3950bdb0270d8b9130de" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Vodafone Customer Interaction Manager - \\Remot*' /&gt;">
+            <ui:WindowScope.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,246" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en imagen 'wfica32.exe Vodafone'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_31" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:ClickImage.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:ClickImage.CursorPosition>
+                    <ui:ClickImage.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAACMAAAASCAYAAADR/2dRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB0SURBVEhL7ZIxCsAwCEU9Wo7umLFD75OQDqVYPsH6IRIaeIM6+DBfVLVlIZdMKeUuVr+XzHnUZfwyiH1kROTCO0NQZOxS1J8R/ia72NYeKJl5CnwVGdACHBUZ7HUZK2BrDyEZtBj1Z1BkvDMELcAMEsnU1gHkj+sXofLfVAAAAABJRU5ErkJggg==" />
+                    </ui:ClickImage.Image>
+                    <ui:ClickImage.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="747093ba-0b80-43d5-b26a-747937c10d69">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:ClickImage.Target>
+                  </ui:ClickImage>
+                </Sequence>
+              </ActivityAction>
+            </ui:WindowScope.Body>
+          </ui:WindowScope>
+        </Sequence>
+      </State.Entry>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">473,389.5</av:Point>
+          <av:Size x:Key="ShapeSize">134,61</av:Size>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State.Transitions>
+        <Transition DisplayName="T6" sap2010:WorkflowViewState.IdRef="Transition_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">540,450.5 540,534.7 364,534.7</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">12</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <State x:Name="__ReferenceID8" DisplayName="Estado final" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">230,522.5</av:Point>
+                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </State>
+          </Transition.To>
+        </Transition>
+      </State.Transitions>
+    </State>
+    <State x:Name="__ReferenceID1" DisplayName="Extraer1" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_11">
+      <State.Entry>
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1082" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="Nombrefichero1" />
+            <Variable x:TypeArguments="x:String" Name="NombreFichero2" />
+            <Variable x:TypeArguments="x:String" Name="Fecha" />
+            <Variable x:TypeArguments="ui:DatabaseConnection" Name="Conexion" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Fecha]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyy_MM_dd_HH")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:DatabaseConnect DatabaseConnection="[Conexion]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_EXTRACCIONES;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+          <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[Conexion]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="[&quot;UPDATE Extracciones set SMART_TVTA_Fichero='&quot;+Fecha+&quot;' where id=&quot;+Config(&quot;ID&quot;).ToString]">
+            <ui:ExecuteNonQuery.Parameters>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:ExecuteNonQuery.Parameters>
+          </ui:ExecuteNonQuery>
+          <ui:DatabaseDisconnect DatabaseConnection="[Conexion]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
+          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[NombreFichero1]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["G:\Inf_Televenta_Marktel\Extracciones\RPA\Extracion_EE_"+Fecha]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[NombreFichero2]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["G:\Inf_Televenta_Marktel\Extracciones\RPA\Extracion_Abiertas_"+Fecha]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:InvokeWorkflowFile ContinueOnError="False" DisplayName="Invoke ExtraerSmarkt2 workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ExtraerSmarkt2.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="NombreFichero1">[NombreFichero1]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="NombreFichero2">[NombreFichero2]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="SFID">[Config("SFID_TVTA").ToString]</InArgument>
+              <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">[Config]</InOutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:DatabaseConnect DatabaseConnection="[Conexion]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_7" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_EXTRACCIONES;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+          <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[Conexion]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_7" Sql="[&quot;UPDATE Extracciones set SMART_TVTA_Fecha=getdate() where id=&quot;+Config(&quot;ID&quot;).ToString]">
+            <ui:ExecuteNonQuery.Parameters>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:ExecuteNonQuery.Parameters>
+          </ui:ExecuteNonQuery>
+          <ui:DatabaseDisconnect DatabaseConnection="[Conexion]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_7" />
+        </Sequence>
+      </State.Entry>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">3,309.5</av:Point>
+          <av:Size x:Key="ShapeSize">134,61</av:Size>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State.Transitions>
+        <Transition DisplayName="T4" sap2010:WorkflowViewState.IdRef="Transition_21">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">137,343.05 163,343.05 163,340</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">40</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">37</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <State x:Name="__ReferenceID2" DisplayName="Extraer2" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_21">
+              <State.Entry>
+                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1082" sap2010:WorkflowViewState.IdRef="Sequence_98">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="Nombrefichero1" />
+                    <Variable x:TypeArguments="x:String" Name="NombreFichero2" />
+                    <Variable x:TypeArguments="x:String" Name="Fecha" />
+                    <Variable x:TypeArguments="ui:DatabaseConnection" Name="Conexion" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Fecha]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyy_MM_dd_HH")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:DatabaseConnect DatabaseConnection="[Conexion]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_EXTRACCIONES;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                  <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[Conexion]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_2" Sql="[&quot;UPDATE Extracciones set SMART_TELE_1_Fichero='&quot;+Fecha+&quot;' where id=&quot;+Config(&quot;ID&quot;).ToString]">
+                    <ui:ExecuteNonQuery.Parameters>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:ExecuteNonQuery.Parameters>
+                  </ui:ExecuteNonQuery>
+                  <ui:DatabaseDisconnect DatabaseConnection="[Conexion]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_2" />
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[NombreFichero1]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["G:\Inf_Televenta_Marktel\Extracciones\RPA\Extracion_EE_1_"+Fecha]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[NombreFichero2]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["G:\Inf_Televenta_Marktel\Extracciones\RPA\Extracion_Abiertas_1_"+Fecha]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtraerSmarkt2 workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ExtraerSmarkt2.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="NombreFichero1">[NombreFichero1]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="NombreFichero2">[NombreFichero2]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="SFID">[Config("SFID_TELE1").ToString]</InArgument>
+                      <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">[Config]</InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:DatabaseConnect DatabaseConnection="[Conexion]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_8" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_EXTRACCIONES;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                  <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[Conexion]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_8" Sql="[&quot;UPDATE Extracciones set SMART_TELE_1_Fecha=getdate() where id=&quot;+Config(&quot;ID&quot;).ToString]">
+                    <ui:ExecuteNonQuery.Parameters>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:ExecuteNonQuery.Parameters>
+                  </ui:ExecuteNonQuery>
+                  <ui:DatabaseDisconnect DatabaseConnection="[Conexion]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_8" />
+                </Sequence>
+              </State.Entry>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">163,309.5</av:Point>
+                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <State.Transitions>
+                <Transition DisplayName="T5" sap2010:WorkflowViewState.IdRef="Transition_20">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">297,333.9 313,333.9 313,333.05</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">28</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <State x:Name="__ReferenceID3" DisplayName="Extraer3" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_20">
+                      <State.Entry>
+                        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1082" sap2010:WorkflowViewState.IdRef="Sequence_99">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="Nombrefichero1" />
+                            <Variable x:TypeArguments="x:String" Name="NombreFichero2" />
+                            <Variable x:TypeArguments="x:String" Name="Fecha" />
+                            <Variable x:TypeArguments="ui:DatabaseConnection" Name="Conexion" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[Fecha]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyy_MM_dd_HH")]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:DatabaseConnect DatabaseConnection="[Conexion]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_3" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_EXTRACCIONES;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                          <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[Conexion]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_3" Sql="[&quot;UPDATE Extracciones set SMART_TELE_2_Fichero='&quot;+Fecha+&quot;' where id=&quot;+Config(&quot;ID&quot;).ToString]">
+                            <ui:ExecuteNonQuery.Parameters>
+                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                            </ui:ExecuteNonQuery.Parameters>
+                          </ui:ExecuteNonQuery>
+                          <ui:DatabaseDisconnect DatabaseConnection="[Conexion]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_3" />
+                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[NombreFichero1]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">["G:\Inf_Televenta_Marktel\Extracciones\RPA\Extracion_EE_2_"+Fecha]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[NombreFichero2]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">["G:\Inf_Televenta_Marktel\Extracciones\RPA\Extracion_Abiertas_2_"+Fecha]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtraerSmarkt2 workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ExtraerSmarkt2.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="NombreFichero1">[NombreFichero1]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="NombreFichero2">[NombreFichero2]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="SFID">[Config("SFID_TELE2").ToString]</InArgument>
+                              <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">[Config]</InOutArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <ui:DatabaseConnect DatabaseConnection="[Conexion]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_9" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_EXTRACCIONES;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                          <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[Conexion]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_9" Sql="[&quot;UPDATE Extracciones set SMART_TELE_2_Fecha=getdate() where id=&quot;+Config(&quot;ID&quot;).ToString]">
+                            <ui:ExecuteNonQuery.Parameters>
+                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                            </ui:ExecuteNonQuery.Parameters>
+                          </ui:ExecuteNonQuery>
+                          <ui:DatabaseDisconnect DatabaseConnection="[Conexion]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_9" />
+                        </Sequence>
+                      </State.Entry>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">313,299.5</av:Point>
+                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <State.Transitions>
+                        <Transition DisplayName="T7" sap2010:WorkflowViewState.IdRef="Transition_19">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:PointCollection x:Key="ConnectorLocation">447,336.1 453,336.1</av:PointCollection>
+                              <x:Int32 x:Key="SrcConnectionPointIndex">44</x:Int32>
+                              <x:Int32 x:Key="DestConnectionPointIndex">45</x:Int32>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Transition.To>
+                            <State x:Name="__ReferenceID4" DisplayName="Extraer4" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_19">
+                              <State.Entry>
+                                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1082" sap2010:WorkflowViewState.IdRef="Sequence_100">
+                                  <Sequence.Variables>
+                                    <Variable x:TypeArguments="x:String" Name="Nombrefichero1" />
+                                    <Variable x:TypeArguments="x:String" Name="NombreFichero2" />
+                                    <Variable x:TypeArguments="x:String" Name="Fecha" />
+                                    <Variable x:TypeArguments="ui:DatabaseConnection" Name="Conexion" />
+                                  </Sequence.Variables>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[Fecha]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyy_MM_dd_HH")]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:DatabaseConnect DatabaseConnection="[Conexion]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_4" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_EXTRACCIONES;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                                  <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[Conexion]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_4" Sql="[&quot;UPDATE Extracciones set SMART_TELE_3_Fichero='&quot;+Fecha+&quot;' where id=&quot;+Config(&quot;ID&quot;).ToString]">
+                                    <ui:ExecuteNonQuery.Parameters>
+                                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                    </ui:ExecuteNonQuery.Parameters>
+                                  </ui:ExecuteNonQuery>
+                                  <ui:DatabaseDisconnect DatabaseConnection="[Conexion]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_4" />
+                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[NombreFichero1]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">["G:\Inf_Televenta_Marktel\Extracciones\RPA\Extracion_EE_3_"+Fecha]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[NombreFichero2]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">["G:\Inf_Televenta_Marktel\Extracciones\RPA\Extracion_Abiertas_3_"+Fecha]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtraerSmarkt2 workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ExtraerSmarkt2.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:String" x:Key="NombreFichero1">[NombreFichero1]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="NombreFichero2">[NombreFichero2]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="SFID">[Config("SFID_TELE3").ToString]</InArgument>
+                                      <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">[Config]</InOutArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                  </ui:InvokeWorkflowFile>
+                                  <ui:DatabaseConnect DatabaseConnection="[Conexion]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_10" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_EXTRACCIONES;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                                  <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[Conexion]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_10" Sql="[&quot;UPDATE Extracciones set SMART_TELE_3_Fecha=getdate() where id=&quot;+Config(&quot;ID&quot;).ToString]">
+                                    <ui:ExecuteNonQuery.Parameters>
+                                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                    </ui:ExecuteNonQuery.Parameters>
+                                  </ui:ExecuteNonQuery>
+                                  <ui:DatabaseDisconnect DatabaseConnection="[Conexion]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_10" />
+                                </Sequence>
+                              </State.Entry>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">453,299.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <State.Transitions>
+                                <Transition DisplayName="T8" sap2010:WorkflowViewState.IdRef="Transition_18">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:PointCollection x:Key="ConnectorLocation">587,336.1 593,336.1</av:PointCollection>
+                                      <x:Int32 x:Key="SrcConnectionPointIndex">44</x:Int32>
+                                      <x:Int32 x:Key="DestConnectionPointIndex">45</x:Int32>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Transition.To>
+                                    <State x:Name="__ReferenceID5" DisplayName="Extraer5" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_18">
+                                      <State.Entry>
+                                        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1082" sap2010:WorkflowViewState.IdRef="Sequence_101">
+                                          <Sequence.Variables>
+                                            <Variable x:TypeArguments="x:String" Name="Nombrefichero1" />
+                                            <Variable x:TypeArguments="x:String" Name="NombreFichero2" />
+                                            <Variable x:TypeArguments="x:String" Name="Fecha" />
+                                            <Variable x:TypeArguments="ui:DatabaseConnection" Name="Conexion" />
+                                          </Sequence.Variables>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_31">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[Fecha]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyy_MM_dd_HH")]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <ui:DatabaseConnect DatabaseConnection="[Conexion]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_5" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_EXTRACCIONES;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                                          <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[Conexion]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_5" Sql="[&quot;UPDATE Extracciones set SMART_TELE_4_Fichero='&quot;+Fecha+&quot;' where id=&quot;+Config(&quot;ID&quot;).ToString]">
+                                            <ui:ExecuteNonQuery.Parameters>
+                                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                            </ui:ExecuteNonQuery.Parameters>
+                                          </ui:ExecuteNonQuery>
+                                          <ui:DatabaseDisconnect DatabaseConnection="[Conexion]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_5" />
+                                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_32">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[NombreFichero1]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["G:\Inf_Televenta_Marktel\Extracciones\RPA\Extracion_EE_4_"+Fecha]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_33">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[NombreFichero2]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["G:\Inf_Televenta_Marktel\Extracciones\RPA\Extracion_Abiertas_4_"+Fecha]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtraerSmarkt2 workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="ExtraerSmarkt2.xaml">
+                                            <ui:InvokeWorkflowFile.Arguments>
+                                              <InArgument x:TypeArguments="x:String" x:Key="NombreFichero1">[NombreFichero1]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="NombreFichero2">[NombreFichero2]</InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="SFID">[Config("SFID_TELE4").ToString]</InArgument>
+                                              <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">[Config]</InOutArgument>
+                                            </ui:InvokeWorkflowFile.Arguments>
+                                          </ui:InvokeWorkflowFile>
+                                          <ui:DatabaseConnect DatabaseConnection="[Conexion]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_11" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_EXTRACCIONES;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                                          <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[Conexion]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_11" Sql="[&quot;UPDATE Extracciones set SMART_TELE_4_Fecha=getdate() where id=&quot;+Config(&quot;ID&quot;).ToString]">
+                                            <ui:ExecuteNonQuery.Parameters>
+                                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                            </ui:ExecuteNonQuery.Parameters>
+                                          </ui:ExecuteNonQuery>
+                                          <ui:DatabaseDisconnect DatabaseConnection="[Conexion]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_11" />
+                                        </Sequence>
+                                      </State.Entry>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">593,299.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <State.Transitions>
+                                        <Transition DisplayName="T9" sap2010:WorkflowViewState.IdRef="Transition_17">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:PointCollection x:Key="ConnectorLocation">727,333.05 743,333.05 743,332.2</av:PointCollection>
+                                              <x:Int32 x:Key="SrcConnectionPointIndex">40</x:Int32>
+                                              <x:Int32 x:Key="DestConnectionPointIndex">53</x:Int32>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Transition.To>
+                                            <State x:Name="__ReferenceID6" DisplayName="Extraer6" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_17">
+                                              <State.Entry>
+                                                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1082" sap2010:WorkflowViewState.IdRef="Sequence_102">
+                                                  <Sequence.Variables>
+                                                    <Variable x:TypeArguments="x:String" Name="Nombrefichero1" />
+                                                    <Variable x:TypeArguments="x:String" Name="NombreFichero2" />
+                                                    <Variable x:TypeArguments="x:String" Name="Fecha" />
+                                                    <Variable x:TypeArguments="ui:DatabaseConnection" Name="Conexion" />
+                                                  </Sequence.Variables>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_34">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Fecha]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyy_MM_dd_HH")]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <ui:DatabaseConnect DatabaseConnection="[Conexion]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_6" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_EXTRACCIONES;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                                                  <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[Conexion]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_6" Sql="[&quot;UPDATE Extracciones set SMART_TELE_5_Fichero='&quot;+Fecha+&quot;' where id=&quot;+Config(&quot;ID&quot;).ToString]">
+                                                    <ui:ExecuteNonQuery.Parameters>
+                                                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                                    </ui:ExecuteNonQuery.Parameters>
+                                                  </ui:ExecuteNonQuery>
+                                                  <ui:DatabaseDisconnect DatabaseConnection="[Conexion]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_6" />
+                                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[NombreFichero1]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">["G:\Inf_Televenta_Marktel\Extracciones\RPA\Extracion_EE_5_"+Fecha]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[NombreFichero2]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">["G:\Inf_Televenta_Marktel\Extracciones\RPA\Extracion_Abiertas_5_"+Fecha]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ExtraerSmarkt2 workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="ExtraerSmarkt2.xaml">
+                                                    <ui:InvokeWorkflowFile.Arguments>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="NombreFichero1">[NombreFichero1]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="NombreFichero2">[NombreFichero2]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="SFID">[Config("SFID_TELE5").ToString]</InArgument>
+                                                      <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config">[Config]</InOutArgument>
+                                                    </ui:InvokeWorkflowFile.Arguments>
+                                                  </ui:InvokeWorkflowFile>
+                                                  <ui:DatabaseConnect DatabaseConnection="[Conexion]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_12" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_EXTRACCIONES;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                                                  <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[Conexion]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_12" Sql="[&quot;UPDATE Extracciones set SMART_TELE_5_Fecha=getdate() where id=&quot;+Config(&quot;ID&quot;).ToString]">
+                                                    <ui:ExecuteNonQuery.Parameters>
+                                                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                                    </ui:ExecuteNonQuery.Parameters>
+                                                  </ui:ExecuteNonQuery>
+                                                  <ui:DatabaseDisconnect DatabaseConnection="[Conexion]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_12" />
+                                                </Sequence>
+                                              </State.Entry>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">743,289.5</av:Point>
+                                                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <State.Transitions>
+                                                <Transition DisplayName="T14" sap2010:WorkflowViewState.IdRef="Transition_27">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:PointCollection x:Key="ConnectorLocation">810,350.5 810,480.5 580.2,480.5 580.2,450.5</av:PointCollection>
+                                                      <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                                      <x:Int32 x:Key="DestConnectionPointIndex">63</x:Int32>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Transition.To>
+                                                    <x:Reference>__ReferenceID0</x:Reference>
+                                                  </Transition.To>
+                                                </Transition>
+                                              </State.Transitions>
+                                            </State>
+                                          </Transition.To>
+                                        </Transition>
+                                      </State.Transitions>
+                                    </State>
+                                  </Transition.To>
+                                </Transition>
+                              </State.Transitions>
+                            </State>
+                          </Transition.To>
+                        </Transition>
+                      </State.Transitions>
+                    </State>
+                  </Transition.To>
+                </Transition>
+              </State.Transitions>
+            </State>
+          </Transition.To>
+        </Transition>
+      </State.Transitions>
+    </State>
+    <State x:Name="__ReferenceID7" DisplayName="Cerrar" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_12">
+      <State.Entry>
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,246" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en imagen 'DIV  pageContent'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+            <ui:ClickImage.CursorPosition>
+              <ui:CursorPosition OffsetX="0" OffsetY="0" Position="Center" />
+            </ui:ClickImage.CursorPosition>
+            <ui:ClickImage.Image>
+              <ui:ImageTarget Image="{x:Null}" Accuracy="0.5" Profile="Basic" TargetImageBase64="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" />
+            </ui:ClickImage.Image>
+            <ui:ClickImage.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="6cce60b3-ec96-41ca-99d3-e4339d6ca8b4" TimeoutMS="120000">
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:ClickImage.Target>
+          </ui:ClickImage>
+        </Sequence>
+      </State.Entry>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">193,179.5</av:Point>
+          <av:Size x:Key="ShapeSize">134,61</av:Size>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State.Transitions>
+        <Transition DisplayName="T2" sap2010:WorkflowViewState.IdRef="Transition_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Int32 x:Key="SrcConnectionPointIndex">3</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">10</x:Int32>
+              <av:PointCollection x:Key="ConnectorLocation">199.7,240.5 199.7,270.5 23.1,270.5 23.1,309.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID1</x:Reference>
+          </Transition.To>
+          <Transition.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Config(&quot;SMART_TVTA_Fecha&quot;).ToString=&quot;&quot;" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+          </Transition.Condition>
+        </Transition>
+        <Transition DisplayName="T3" sap2010:WorkflowViewState.IdRef="Transition_22">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">226.5,240.5 226.5,270.5 209.9,270.5 209.9,309.5</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">19</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">26</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID2</x:Reference>
+          </Transition.To>
+          <Transition.Condition>[Config("SMART_TVTA_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_1_Fecha").ToString=""]</Transition.Condition>
+        </Transition>
+        <Transition DisplayName="T10" sap2010:WorkflowViewState.IdRef="Transition_23">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">246.6,240.5 246.6,270.5 333.1,270.5 333.1,299.5</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">31</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">10</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID3</x:Reference>
+          </Transition.To>
+          <Transition.Condition>[Config("SMART_TVTA_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_1_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_2_Fecha").ToString=""]</Transition.Condition>
+        </Transition>
+        <Transition DisplayName="T11" sap2010:WorkflowViewState.IdRef="Transition_24">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">266.7,240.5 266.7,270.5 479.8,270.5 479.8,299.5</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">14</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID4</x:Reference>
+          </Transition.To>
+          <Transition.Condition>[Config("SMART_TVTA_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_1_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_2_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_3_Fecha").ToString=""]</Transition.Condition>
+        </Transition>
+        <Transition DisplayName="T12" sap2010:WorkflowViewState.IdRef="Transition_25">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">286.8,240.5 286.8,270.5 626.5,270.5 626.5,299.5</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">55</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">18</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID5</x:Reference>
+          </Transition.To>
+          <Transition.Condition>[Config("SMART_TVTA_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_1_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_2_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_3_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_4_Fecha").ToString=""]</Transition.Condition>
+        </Transition>
+        <Transition DisplayName="T13" sap2010:WorkflowViewState.IdRef="Transition_26">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">313.6,240.5 313.6,270.5 796.6,270.5 796.6,289.5</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">71</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">30</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID6</x:Reference>
+          </Transition.To>
+          <Transition.Condition>[Config("SMART_TVTA_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_1_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_2_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_3_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_4_Fecha").ToString&lt;&gt;"" And Config("SMART_TELE_5_Fecha").ToString=""]</Transition.Condition>
+        </Transition>
+      </State.Transitions>
+    </State>
+    <State x:Name="__ReferenceID9" DisplayName="AbrirSmarkt" sap:VirtualizedContainerService.HintSize="606,2166" sap2010:WorkflowViewState.IdRef="State_13">
+      <State.Entry>
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="560,1806" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Abrir Smarkt&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+          <ui:RetryScope DisplayName="Reintentar ámbito" sap:VirtualizedContainerService.HintSize="518,1452" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="476,1187" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'chrome.exe Citrix'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="WindowScope_31" InformativeScreenshot="9dd49151b4ba7308dd18b9a5fbf21372" Selector="&lt;html app='chrome.exe' title='Citrix XenApp - Aplicaciones' /&gt;">
+                    <ui:WindowScope.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'A  idCitrix.MPS.App.CAA...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition OffsetX="90" OffsetY="13" Position="TopLeft" />
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5e45b85b-63f8-4bde-84fe-25dc354afccc" InformativeScreenshot="cc504227768cd0b8763098808d34ccd4" Selector="&lt;webctrl id='idCitrix.MPS.App.CAAS15-ES.ES_005fPROD-SMART' tag='A' /&gt;" WaitForReady="COMPLETE">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                              </ui:Target>
+                            </ui:Click.Target>
+                          </ui:Click>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:WindowScope.Body>
+                  </ui:WindowScope>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Cerrar portal info&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:CloseWindow UseWindow="{x:Null}" ContinueOnError="True" DisplayName="Cerrar ventana 'wfica32.exe portalInfog...'" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="CloseWindow_2" InformativeScreenshot="c8812608eaf84ca79c2306df5ca2d16f" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='portalInfoguia - Internet Explorer - \\Remot*' /&gt;" TimeoutMS="120000" WaitForReady="INTERACTIVE" />
+                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" Window="{x:Null}" ContinueOnError="True" DisplayName="Asociar ventana 'wfica32.exe C:\Windows\...'" sap:VirtualizedContainerService.HintSize="434,434" sap2010:WorkflowViewState.IdRef="WindowScope_32" InformativeScreenshot="faba0601c000500457abcb841345dc43" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='C:\Windows\system32\cmd.exe *' /&gt;" TimeoutMS="60000">
+                    <ui:WindowScope.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,288" sap2010:WorkflowViewState.IdRef="Sequence_103">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Delay DisplayName="Retraso" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en 'wfica32.exe C:\Windows\...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[Config(&quot;PASSCITRIX&quot;).ToString+ &quot;[k(enter)]&quot;]">
+                            <ui:TypeInto.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d019e5e7-3eb2-47ba-abb9-889cf5b2d7f1" InformativeScreenshot="69892eaf8aa37bc657301a2d16d790c9">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:TypeInto.Target>
+                          </ui:TypeInto>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:WindowScope.Body>
+                  </ui:WindowScope>
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean">
+                <ui:ImageFound Found="{x:Null}" DisplayName="Imagen existente 'chrome.exe Citrix'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ImageFound_3">
+                  <ui:ImageFound.Image>
+                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.6" Profile="Basic" TargetImageBase64="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" />
+                  </ui:ImageFound.Image>
+                  <ui:ImageFound.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f1f76c34-edd9-4359-8547-650cd5c086d4" TimeoutMS="180000">
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:ImageFound.Target>
+                </ui:ImageFound>
+              </ActivityFunc>
+            </ui:RetryScope.Condition>
+          </ui:RetryScope>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,91" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Smarkt abierto&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+        </Sequence>
+      </State.Entry>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">3,179.5</av:Point>
+          <av:Size x:Key="ShapeSize">134,61</av:Size>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State.Transitions>
+        <Transition DisplayName="T1" sap2010:WorkflowViewState.IdRef="Transition_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Int32 x:Key="SrcConnectionPointIndex">32</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">53</x:Int32>
+              <av:PointCollection x:Key="ConnectorLocation">137,206.95 167,206.95 167,222.2 193,222.2</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID7</x:Reference>
+          </Transition.To>
+        </Transition>
+      </State.Transitions>
+    </State>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <StateMachine.Variables>
+      <Variable x:TypeArguments="x:String" Name="WficaExeVodafone" />
+      <Variable x:TypeArguments="x:String" Name="WficaExeVodafone2" />
+    </StateMachine.Variables>
+  </StateMachine>
+</Activity>

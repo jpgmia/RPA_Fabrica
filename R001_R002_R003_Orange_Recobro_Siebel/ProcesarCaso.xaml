@@ -1,0 +1,1683 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Máquinadeestado" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="caso" Type="InOutArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>721,1561</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Máquinadeestado_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="50">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Java.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <StateMachine InitialState="{x:Reference __ReferenceID10}" DisplayName="Máquinadeestado" sap:VirtualizedContainerService.HintSize="731,1456" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">230,2.5</av:Point>
+        <x:Double x:Key="StateContainerWidth">697</x:Double>
+        <x:Double x:Key="StateContainerHeight">1420</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">260,77.5 260,99.5</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <State x:Name="__ReferenceID0" DisplayName="ir 360" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_2">
+      <State.Entry>
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="560,861" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:RetryScope ContinueOnError="True" DisplayName="Reintentar ámbito" sap:VirtualizedContainerService.HintSize="518,769" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="476,504" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[Continuar]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[Reintento]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[Reintento+1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" ContinueOnError="True" DisplayName="Asociar ventana 'iexplore.exe Siebel'" sap:VirtualizedContainerService.HintSize="434,212" sap2010:WorkflowViewState.IdRef="WindowScope_10" InformativeScreenshot="a2d2d5c10021be7d6312d48afba475a2" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='Siebel Communications for Wireless * - Internet Explorer' /&gt;">
+                    <ui:WindowScope.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[Config(&quot;Primero&quot;).ToString=&quot;Si&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="713,302" sap2010:WorkflowViewState.IdRef="If_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <ui:ClickImage DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Clic en imagen 'iexplore.exe Siebel'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_10" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                <ui:ClickImage.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:ClickImage.CursorPosition>
+                                <ui:ClickImage.Image>
+                                  <ui:ImageTarget Image="{x:Null}" Accuracy="0.9" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFgAAAAaCAYAAAAzBZtTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIZSURBVGhD7ZZRjoQgDIbnTnMbLsM59s13szeYbOIF5ggmJvtsvAHblqIVQWRW3von/2awUspnw/L4/vl16nZWwI2tgBtbATf2A4R/1K3sQPhDdb8OgJ/PL/VNRinghkYp4IZGVQLunR1meo80za6zvY/ZkR4NNvp9yHHdxr7d0L2SsU9toLaJqgNNo+uMjL/csAZnWJv3hjZQS4gd5qWNqgDcuw4XmN7OUnKA3SFsgIzjm6Buhs1SwhsBG5mT9+NGZynOY17P0osQo73u51EMOBiZO2HUdcAlgGcdnPv68Jy+2TByPHRN2DwrbOaki0wnOhPzFD/01jAhNw6T8+L90JgbK35XGHUZsJHdmohnAQeIDG7tDJzDMb/JuKOiDr6QZ4q7j/KkzLnlfhjatB6B4iMlAYtxxqjLgItFZwAfPox8bwctXmMP+EoeD+jlTKGzguV6Pj9IHgO8XoitQFsA/rSD18IjEdRqwEetc6P4NJTPyFzNVTGZLzLqMuBi0kxBpx/mPx2cdO9vHr6diwB2NXMt65zMfrZYqZZawOGMPNwiEkUkCg8Qd6AqAJ/m4fW2WAQkePdedI6H/eERA+N8LTzv9lsEGYr45B4MY6zdS/zzOAUcIIpnuTz4bhzjnLF3tw24ifhmYeM1LgTjuy7Umo1ljKoErK4xSgE3NEoBNzRKATc0SgE3NIoAL8vi1O2sgBtbATf14v4AwW0KtmCapzcAAAAASUVORK5CYII=" />
+                                </ui:ClickImage.Image>
+                                <ui:ClickImage.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c380658b-256e-4133-8a63-30bb3e4ca736" Selector="&lt;html title='Siebel Communications for Wireless *' /&gt;" TimeoutMS="2000">
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:ClickImage.Target>
+                              </ui:ClickImage>
+                            </If.Then>
+                            <If.Else>
+                              <ui:ClickImage DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Clic en imagen 'iexplore.exe Siebel'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_11" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                <ui:ClickImage.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:ClickImage.CursorPosition>
+                                <ui:ClickImage.Image>
+                                  <ui:ImageTarget Image="{x:Null}" Accuracy="0.9" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFcAAAARCAYAAACoyTAdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHzSURBVFhH7ZbRkcQgCIa3pxRjLXaS62ArMB1cBTaQDrYDThQMGo26l7zJzD93CQHhk3F9gbPXy/+ZdrMlcD+fz9RNQptwHxLahPuQ0Abg7mD0G5blJ0i9YTV78JnNv9Mm+/+Uo1/W/IJebdH3rayrTcX6N1it9FvQinzL261NvaGsq4V9p7iy0Drh7rBicvULxid2oFcE7QDj801AD7lGsRF9I1wrc1I/ywbG++mZ1jOafL7XNM77HAcrcxeE1ge3Be9qcmu77t7jFCm9kZ+nhRvnGGrkYnrsKiYS8zQ3+RgWzo3xxbi8H/9MQ5V/K4TWBdfKKS34q3AZIEGLE4Ex5AsN5pOUTW5HHpVPnc9TEuWW/RAwFY89sUFFuJWNEELrgtssuAL3tCnyuwRYvkYKtydPgGPBNiaKJdcL+Xk93rywHvsizLvhfju5sehMHugw3DRHzIOxmV/p9plYq3nIJ/NlQuuC20xYKeZyU/4zuUXt4YZB53Kr+aRmqiXGVPo5fK1aRuDymXi6LRQKKBTNABNIA3Av89B6hy+DwUq+y85t7g+PFfdcr4Xibr0teLkCvrnnumcEE+LED8UlXAYo3tXy4Le5j3LmSm4V7sYRBoWEVzWa+tNd1tVa9VWENgB3akRoE+5DQptwHxLahPuQAAD+AC3JMjrCComVAAAAAElFTkSuQmCC" />
+                                </ui:ClickImage.Image>
+                                <ui:ClickImage.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c380658b-256e-4133-8a63-30bb3e4ca736" TimeoutMS="2000">
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:ClickImage.Target>
+                              </ui:ClickImage>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:WindowScope.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:WindowScope>
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean">
+                <ui:UiElementExists DisplayName="Elemento existente 'client'" Exists="[Continuar]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d07ad9c5-7232-4d7d-81cd-065fb207be4c" InformativeScreenshot="281dbaa46dbef8f3c54876a2f147c1ce" Selector="&lt;html title='Siebel Communications for Wireless *' /&gt;&lt;webctrl aaname='Cód. Cliente BSCS:' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+              </ActivityFunc>
+            </ui:RetryScope.Condition>
+          </ui:RetryScope>
+        </Sequence>
+      </State.Entry>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">183,209.5</av:Point>
+          <av:Size x:Key="ShapeSize">134,61</av:Size>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State.Transitions>
+        <Transition DisplayName="T1" sap2010:WorkflowViewState.IdRef="Transition_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+              <av:PointCollection x:Key="ConnectorLocation">256.7,270.5 256.7,300.5 260,300.5 260,309.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Continuar=true" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+          </Transition.Condition>
+          <Transition.To>
+            <State x:Name="__ReferenceID6" DisplayName="escribircuscode" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_3">
+              <State.Entry>
+                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="844,1212" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="802,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Object">[Config("Primero")]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Object">["No"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Delay DisplayName="Retraso" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="802,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" Activate="True" DelayMS="500" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="802,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[&quot;[k(tab)][k(tab)]&quot;+caso(&quot;Cuscode&quot;).ToString+ &quot;[k(tab)]&quot;]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'SiebelCom Page'" sap:VirtualizedContainerService.HintSize="802,436" sap2010:WorkflowViewState.IdRef="WindowScope_9" InformativeScreenshot="67ecc5fbbef766485a6c4a0e4fd8d1c4" Selector="&lt;html title='Siebel Communications for Wireless *' /&gt;">
+                    <ui:WindowScope.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="768,290" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:AnchorBase AnchorPosition="Left" DisplayName="Base de anclaje" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorBase_2">
+                            <ui:AnchorBase.Action>
+                              <ActivityAction x:TypeArguments="ui:Anchor">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
+                                </ActivityAction.Argument>
+                                <ui:GetFullText ContinueOnError="True" DisplayName="Acción Obtener texto completo 'Edit'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_2" IgnoreHidden="False">
+                                  <ui:GetFullText.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2c655aa2-eace-462d-ad55-d412ab930828" InformativeScreenshot="708ea45bf46cfa3aac485446dfb1dab5" Selector="&lt;wnd cls='Edit' /&gt;" TimeoutMS="2000">
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:GetFullText.Target>
+                                  <ui:GetFullText.Text>
+                                    <OutArgument x:TypeArguments="x:String">[cuscode]</OutArgument>
+                                  </ui:GetFullText.Text>
+                                </ui:GetFullText>
+                              </ActivityAction>
+                            </ui:AnchorBase.Action>
+                            <ui:AnchorBase.AnchorProvider>
+                              <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Anclaje Buscar elemento 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4">
+                                <ui:WaitUiElementAppear.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d1c26e51-1000-4a06-b846-62dbeee724c4" InformativeScreenshot="eaefe0e0e278c8c6d1abc8585e715879" Selector="&lt;webctrl aaname='Cód. Cliente BSCS:' parentid='a_1' tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                  </ui:Target>
+                                </ui:WaitUiElementAppear.Target>
+                              </ui:WaitUiElementAppear>
+                            </ui:AnchorBase.AnchorProvider>
+                          </ui:AnchorBase>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:WindowScope.Body>
+                  </ui:WindowScope>
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="802,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[cuscode]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[cuscode.Replace(" ","")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[cuscode.Contains(&quot;.&quot;)=False]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="802,208" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[cuscode]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[cuscode.Substring(0,1)+"."+cuscode.Substring(1,cuscode.Length-1)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Then>
+                  </If>
+                </Sequence>
+              </State.Entry>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">193,309.5</av:Point>
+                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <State.Transitions>
+                <Transition DisplayName="T2" sap2010:WorkflowViewState.IdRef="Transition_23">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                      <av:PointCollection x:Key="ConnectorLocation">260,370.5 260,419.5</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.Condition>
+                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="caso(&quot;Cuscode&quot;).ToString=cuscode" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+                  </Transition.Condition>
+                  <Transition.To>
+                    <State x:Name="__ReferenceID11" DisplayName="Reintento" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_11">
+                      <State.Entry>
+                        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[Reintento]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </State.Entry>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">193,419.5</av:Point>
+                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <State.Transitions>
+                        <Transition DisplayName="T17" sap2010:WorkflowViewState.IdRef="Transition_22">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                              <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                              <av:PointCollection x:Key="ConnectorLocation">260,480.5 260,519.5</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Transition.To>
+                            <State x:Name="__ReferenceID5" DisplayName="ir" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_4">
+                              <State.Entry>
+                                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="494,1234" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="452,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Int32">[Reintento]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Int32">[Reintento+1]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:InjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" DisplayName="Inject Js Script 'Edit'" sap:VirtualizedContainerService.HintSize="452,134" sap2010:WorkflowViewState.IdRef="InjectJsScript_1" ScriptCode="App().InvokeControlMethod('', 'AMN V360 SIS Account Entry Applet', 'ExecuteQuery');return true;">
+                                    <ui:InjectJsScript.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="68460808-59f3-4f66-80d4-9178398e85e5" InformativeScreenshot="3a3ea769d22a56819cc762a2d7717edc" Selector="&lt;html title='Siebel Communications for Wireless *' /&gt;&lt;webctrl id='frset1' tag='FRAMESET' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:InjectJsScript.Target>
+                                  </ui:InjectJsScript>
+                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="452,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[ObtenerTexto]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <Literal x:TypeArguments="x:String" Value="" />
+                                      </InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'SiebelCom Page'" sap:VirtualizedContainerService.HintSize="452,768" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="0fd1fe902c5f93d64f97ee8e0efda919" Selector="&lt;html title='Siebel Communications for Wireless *' /&gt;">
+                                    <ui:WindowScope.Body>
+                                      <ActivityAction x:TypeArguments="x:Object">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,622" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Buscar imagen relativa" sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:WaitImageAppear FoundElement="{x:Null}" DisplayName="Buscar imagen 'TABLE'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitImageAppear_1">
+                                              <ui:WaitImageAppear.Image>
+                                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHkAAABBCAYAAAD10wuJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARpSURBVHhe7ZqxUSNBEEUVCFXEgUcQ2BgEQAL4hIBFDhRJYJGG4uDqUfWor7nZQ+iQkOg2Xk33TM+f3vms7oxdrdfrt33w+vraHAltcgHa5AK0yQU4GpOvrq6m84fmWPr4TvZu8v39/dtqtfrg4uJiowF4fn5+Xxvnt+X29nZDn1yzMv6M/+3jWDmIyWns2dnZhimPj4/vcxpkDTkjOTXWY4RarlkHaJCPJmtgatCbZyVozOpPlYObrMGYw+WTe6Gua5DrzpmrlTU5lxrG9EAvuabJxKyzZh+z+lPlR0wm9y0hT5PTNC843yrXJOvFfRnnG2s/2RsjtfYxqz9VDm4yMRe3zZvsxTs3asHs5xqt0WTmxzfzXybP6k+Vg//HiwsDYi7SCzQn9i1K89yPnnOiOWqkMcazf9dHk+2VeFZ/quzd5ObnaZML0CYXoE0uQJtcgDa5AHszuTke2uQCtMkFaJML0CYXoE0uQJtcgDa5AG1yAdrkArTJBWiTCzA1+eHh4ePTF7i+vv6r5iehP1iat9+Xl5f3/hnH2iXUgJubm/eReTR2vQc0Li8vN3J1P+Pu7u7t6elpurYtiyZnEzwcuabzwBxuThNeqOvso4aHY879zKkL7HWfDzNqZU4NWuqCvTKCZnh+npk9zfpWAzAZLdbYM/7xuGf2DAla5+fnH32QE6dG9sU6I3Njv6yZL/U+nr+VyT4EQsDDcjg1rBEzRwx5ydbRGHsZ1QVqmSd2HLXM3Y8eutQyb+y8ORebI7iulucDMRqCyXmBrKNhP9kfNaw5JurRB3uI0U0N+2It72rsd+yDeXBuxpdMFg+3SWLmrDcea3JNaFBdzxy18hKBOvTcpzbz1Hum60BOjT2pDdYQ++ygydTmRVLHaDx7hkQ96jCaWF1AY+muxn7VMvdcYvVGtv65prm86LEpasy9jKXG1QANzEsctcxZGy+JWO2czz3qEFNLnedBPhdrosnsJ1dDbXXVyGdI1CPmfI1JjaW7GvtNLc/1nCW2/o8XYpmPTeW6B88aZ90mgTX3ETM30zL3ITGbnIugH2qYJ2cP657hfubpw72cl2flJQImUz+eM/Y3PoP7PXvMNS81ZndlXfabWku9e45MTf7NeJmzte9CM2ZrP0GbXIByJlekTS5Am1yANrkAbXIB2uQCtMkFaJML0CYXoE0uQJtcgDa5AG1yAdrkArTJBWiTC9Am7wBfffjZjZ/ezOr2xVc/fGiTd2D8lsrvqzSdb6/y+ysN0RwgBr7josb9aLkPDfc5x15GvvvKM4jHvqRN3oHxMr14DcQoIObyMZK6mcmAFjWaxgj+QliT+zxHPWtntMk7sGSyOYZx6RjlHGgOpFnm1Phmwr/+OIhdh4xH2uQdGE3GUH4+NYLct4x1Pw/WHPamWUBMjW+y2rnPOnPPMM49SZu8A5iUbxwX7E9tmmTuHwRmkGN6mgXE1PiNNWjcWOf545nMe1bSJhegTS5Am1yANrkAbXIB2uRfz/rtDyhha+jgPvgoAAAAAElFTkSuQmCC" />
+                                              </ui:WaitImageAppear.Image>
+                                              <ui:WaitImageAppear.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f7d0db60-fa16-4d3d-940c-8f60436eb217">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                  <ui:Target.WaitForReady>
+                                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                  </ui:Target.WaitForReady>
+                                                </ui:Target>
+                                              </ui:WaitImageAppear.Target>
+                                            </ui:WaitImageAppear>
+                                            <ui:SetClippingRegion Element="{x:Null}" Region="{x:Null}" Direction="TRANSLATE" DisplayName="Traducir zona de recorte" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SetClippingRegion_1">
+                                              <ui:SetClippingRegion.Size>
+                                                <ui:Region Rectangle="-174, -65, 384, 68" />
+                                              </ui:SetClippingRegion.Size>
+                                            </ui:SetClippingRegion>
+                                          </Sequence>
+                                          <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Obtener texto OCR 'iexplore.exe Siebel'" sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="GetOCRText_2">
+                                            <ui:GetOCRText.OCREngine>
+                                              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                                                <ActivityFunc.Argument>
+                                                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                                                </ActivityFunc.Argument>
+                                                <ui:GoogleOCR FilterRegion="{x:Null}" Output="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_2" Image="[Image]" Invert="False" Language="eng" Profile="Screen" Scale="2">
+                                                  <ui:GoogleOCR.AllowedCharacters>
+                                                    <InArgument x:TypeArguments="x:String">
+                                                      <Literal x:TypeArguments="x:String" Value="" />
+                                                    </InArgument>
+                                                  </ui:GoogleOCR.AllowedCharacters>
+                                                  <ui:GoogleOCR.DeniedCharacters>
+                                                    <InArgument x:TypeArguments="x:String">
+                                                      <Literal x:TypeArguments="x:String" Value="" />
+                                                    </InArgument>
+                                                  </ui:GoogleOCR.DeniedCharacters>
+                                                </ui:GoogleOCR>
+                                              </ActivityFunc>
+                                            </ui:GetOCRText.OCREngine>
+                                            <ui:GetOCRText.Target>
+                                              <ui:Target Element="{x:Null}" Selector="{x:Null}" Id="6752b40d-b563-4faf-88d2-52e62d02a3f0" InformativeScreenshot="785e9de50526ff39e8237f3da88988e0">
+                                                <ui:Target.ClippingRegion>
+                                                  <ui:Region Rectangle="136, 170, 148, 20" />
+                                                </ui:Target.ClippingRegion>
+                                                <ui:Target.TimeoutMS>
+                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                </ui:Target.TimeoutMS>
+                                                <ui:Target.WaitForReady>
+                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                </ui:Target.WaitForReady>
+                                              </ui:Target>
+                                            </ui:GetOCRText.Target>
+                                            <ui:GetOCRText.Text>
+                                              <OutArgument x:TypeArguments="x:String">[ObtenerTexto]</OutArgument>
+                                            </ui:GetOCRText.Text>
+                                          </ui:GetOCRText>
+                                          <ui:SetClippingRegion Element="{x:Null}" Region="{x:Null}" Direction="RECTANGLE" DisplayName="Restablecer zona de recorte" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="SetClippingRegion_2">
+                                            <ui:SetClippingRegion.Size>
+                                              <ui:Region Rectangle="0, 0, 0, 0" />
+                                            </ui:SetClippingRegion.Size>
+                                          </ui:SetClippingRegion>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </ui:WindowScope.Body>
+                                  </ui:WindowScope>
+                                </Sequence>
+                              </State.Entry>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">193,519.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <State.Transitions>
+                                <Transition DisplayName="T3" sap2010:WorkflowViewState.IdRef="Transition_7">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                      <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                                      <av:PointCollection x:Key="ConnectorLocation">260,580.5 260,649.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Transition.Condition>
+                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ObtenerTexto&lt;&gt;&quot;&quot;" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
+                                  </Transition.Condition>
+                                  <Transition.To>
+                                    <State x:Name="__ReferenceID7" DisplayName="interaciones" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_5">
+                                      <State.Entry>
+                                        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="560,893" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:RetryScope ContinueOnError="True" DisplayName="Reintentar ámbito" sap:VirtualizedContainerService.HintSize="518,801" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3">
+                                            <ui:RetryScope.ActivityBody>
+                                              <ActivityAction>
+                                                <Sequence DisplayName="Acción" sap:VirtualizedContainerService.HintSize="476,536" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[Continuar]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'iexplore.exe Siebel'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="WindowScope_11" InformativeScreenshot="e2982b70f0380a839eb5bab60fb4f783" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='Siebel Communications for Wireless * - Internet Explorer' /&gt;">
+                                                    <ui:WindowScope.Body>
+                                                      <ActivityAction x:TypeArguments="x:Object">
+                                                        <ActivityAction.Argument>
+                                                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                        </ActivityAction.Argument>
+                                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Clic en imagen 'iexplore.exe Siebel'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ClickImage_12" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                            <ui:ClickImage.CursorPosition>
+                                                              <ui:CursorPosition Position="Center">
+                                                                <ui:CursorPosition.OffsetX>
+                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                </ui:CursorPosition.OffsetX>
+                                                                <ui:CursorPosition.OffsetY>
+                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                </ui:CursorPosition.OffsetY>
+                                                              </ui:CursorPosition>
+                                                            </ui:ClickImage.CursorPosition>
+                                                            <ui:ClickImage.Image>
+                                                              <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAATCAYAAAAH3YpvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGWSURBVFhH7VWxcsIwDOXr+i9M/Y78BhMf0ImNJSN3Wbqw9FjCzHVXZUVy5KDYxYZrB727B4ksKU/PxGw+v77BWU83sJEbRPhw1nMDjnpEA9/eP5wVdAMb6QY2smxgd4bL9Qxba414gj67/kIWtb2e7Qb+gyH+kr83MHwPI/SUjRhOuH6E/ZXvxcTdyAEE5UgPrKXcETqMbQ83SiFInuRyWHJX46INr3W/y+E419xp5n6WTj0PIvbJ8DED40D42hpDJNfIbgDodxyHG+y7KZ7mqV50PeeRKTTcSlz6UH+jx13c0IyMOoOp0Uyta52PGRgfGnZKiZS43lUG7eJCcOzLOaAHXuZJbi6eDL7YuFinNOd08r3ul+PzDbQenNQiaYCVX4zOE5biNQbmDAp15Ar3sXKYzzWQHsxxyrEGQeoByEypSV9VWqO6lbjWVtyQhWZD53xkhPi0EaVzsN1AEoyQNTKEIWKSWlUTwId83GkaTqDOICuu+uo/kaSXqRlp6UQG0yISzTbLBjqznNxzVMMNbIQb2ASAHw3lqJsSTRB7AAAAAElFTkSuQmCC" />
+                                                            </ui:ClickImage.Image>
+                                                            <ui:ClickImage.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="14eeeaba-7b75-4997-baf1-42a619652f36">
+                                                                <ui:Target.TimeoutMS>
+                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                </ui:Target.TimeoutMS>
+                                                                <ui:Target.WaitForReady>
+                                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                </ui:Target.WaitForReady>
+                                                              </ui:Target>
+                                                            </ui:ClickImage.Target>
+                                                          </ui:ClickImage>
+                                                        </Sequence>
+                                                      </ActivityAction>
+                                                    </ui:WindowScope.Body>
+                                                  </ui:WindowScope>
+                                                </Sequence>
+                                              </ActivityAction>
+                                            </ui:RetryScope.ActivityBody>
+                                            <ui:RetryScope.Condition>
+                                              <ActivityFunc x:TypeArguments="x:Boolean">
+                                                <ui:ImageFound DisplayName="Imagen existente 'iexplore.exe Siebel'" Found="[Continuar]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+                                                  <ui:ImageFound.Image>
+                                                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAASsAAAAUCAYAAADV/xt4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKVSURBVHhe7ZntkYMgFEVTEsVoK24lphHHQjLbSDpg+XgooEQxyeyd4f44M0kU3HkHLsjens+n/n08CBB0ggNd4MCwAoROcKALHBhWgNAJDnSBA8MKEDrBgS5wYFgBQic40AUODCtA6AQHusCBYQUIneBAFzhsw2rs9O12S+jH6HqBeRx0P4y714rIs8703xKpk0n/qNRHQA2T/p0Grcxn1vA77IeVcdKp1YXq9M+U3/MB6DahEFaqsvgyoTqG1ScoruaX3JB32LqQsa4GPctv82CD6wteGFYJVWE1D50rXrqaZCu/SLxHK4/qYrGhD6V7uWeRYXZnaunLXB/NzkHatURVWMUDOnzuVk9u97W0Z31rubKY7459caOMm14cqGhxf9WGYeU58RrY6bv9PRRbBv+9M9eW1SXbWdk+wrVYrvTt+5h8H+Z7PNFC/361alPUu2FlPdjaz1Jv1vc6uYvDXVRp7Odu4n4O2tCRp2JnNereFtuhXPrfl3u2r4HuDMusFk6QFNwLkvCzuGcVrsnzkp1BI7wbVuvgXmvI+l6jOqwMe2M/Xyxyl6/arD7bpvLMygx6W1RlhfnQ8velYRWE2teMeHVnWJ2DYYXD/vwoB0hp7L8Kq6M2pWe1xvmwyoptz57W+9Kw8q93fmJ4EXvCzrwG7vwdDfBuWIVXiuPXwDbrW8PWhYz15QgkreW5sW++Ry6P2rjP8qyWOXFmFQ1wc81NBodZCULh7TUpspMYJo1tK4e96yQpH7DbXRsPgD+ws1oO2DNHrG81+y5MYEUH4u6fTaGWpbEvv++F1VEbhpVnG1bk37nshIP743B+4MCwAoRhhQPnBw4MK0DoBAe6wIFhBQid4EAXODCsAKETHOgChYf+A13dHrsCbsweAAAAAElFTkSuQmCC" />
+                                                  </ui:ImageFound.Image>
+                                                  <ui:ImageFound.Target>
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="28fa5150-9600-4e71-b76d-024110bdb9ff" Selector="&lt;html title='Siebel Communications for Wireless *' /&gt;">
+                                                      <ui:Target.TimeoutMS>
+                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                      </ui:Target.TimeoutMS>
+                                                      <ui:Target.WaitForReady>
+                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                      </ui:Target.WaitForReady>
+                                                    </ui:Target>
+                                                  </ui:ImageFound.Target>
+                                                </ui:ImageFound>
+                                              </ActivityFunc>
+                                            </ui:RetryScope.Condition>
+                                          </ui:RetryScope>
+                                        </Sequence>
+                                      </State.Entry>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">193,649.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <State.Transitions>
+                                        <Transition DisplayName="T4" sap2010:WorkflowViewState.IdRef="Transition_28">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                              <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                                              <av:PointCollection x:Key="ConnectorLocation">260,710.5 260,749.5</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Transition.Condition>
+                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Continuar=True" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_3" />
+                                          </Transition.Condition>
+                                          <Transition.To>
+                                            <State x:Name="__ReferenceID12" DisplayName="Reintento" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_13">
+                                              <State.Entry>
+                                                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Int32">[Reintento]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </State.Entry>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">193,749.5</av:Point>
+                                                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <State.Transitions>
+                                                <Transition DisplayName="T20" sap2010:WorkflowViewState.IdRef="Transition_27">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Int32 x:Key="SrcConnectionPointIndex">32</x:Int32>
+                                                      <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                                                      <av:PointCollection x:Key="ConnectorLocation">327,776.95 380,776.95 380,839.5</av:PointCollection>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Transition.Condition>
+                                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="errorTipificar=false" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_4" />
+                                                  </Transition.Condition>
+                                                  <Transition.To>
+                                                    <State x:Name="__ReferenceID1" DisplayName="Nueva" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_6">
+                                                      <State.Entry>
+                                                        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="494,1234" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="452,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:Int32">[Reintento]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:Int32">[Reintento+1]</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <ui:InjectJsScript InputParameter="{x:Null}" ScriptOutput="{x:Null}" DisplayName="Inject Js Script 'Edit'" sap:VirtualizedContainerService.HintSize="452,134" sap2010:WorkflowViewState.IdRef="InjectJsScript_4" ScriptCode="App().InvokeControlMethod('', 'AMN V360 Account Activity List Applet', 'NewRecord'); return false;">
+                                                            <ui:InjectJsScript.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="68460808-59f3-4f66-80d4-9178398e85e5" InformativeScreenshot="3a3ea769d22a56819cc762a2d7717edc" Selector="&lt;html title='Siebel Communications for Wireless *' /&gt;&lt;webctrl id='frset1' tag='FRAMESET' /&gt;">
+                                                                <ui:Target.TimeoutMS>
+                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                </ui:Target.TimeoutMS>
+                                                                <ui:Target.WaitForReady>
+                                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                </ui:Target.WaitForReady>
+                                                              </ui:Target>
+                                                            </ui:InjectJsScript.Target>
+                                                          </ui:InjectJsScript>
+                                                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="452,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:String">[ObtenerTexto]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:String">
+                                                                <Literal x:TypeArguments="x:String" Value="" />
+                                                              </InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'SiebelCom Page'" sap:VirtualizedContainerService.HintSize="452,768" sap2010:WorkflowViewState.IdRef="WindowScope_5" InformativeScreenshot="a1a777d90bd8991542023365dde0589d" Selector="&lt;html title='Siebel Communications for Wireless *' /&gt;">
+                                                            <ui:WindowScope.Body>
+                                                              <ActivityAction x:TypeArguments="x:Object">
+                                                                <ActivityAction.Argument>
+                                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                                </ActivityAction.Argument>
+                                                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,622" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                  <Sequence DisplayName="Buscar imagen relativa" sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:WaitImageAppear FoundElement="{x:Null}" DisplayName="Buscar imagen '#32770'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitImageAppear_3">
+                                                                      <ui:WaitImageAppear.Image>
+                                                                        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAScAAAAXCAYAAABJV4lYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKuSURBVHhe7ZnrkYMgFEYtiWKwFVOJNuJYSCaNpAOWx0URIb6S4c7y/TgzSRDcuQc/kG3e77d6PZ+AEXDCB7goB8KJIXDCB7goB8KJIXDCB7goB8KJIXDCB7goB8KJIXDCB7goB8KJIXDCB7goB8KJIXDCB7goxzaceqmaplnR9kF7hqnvVNv1ybYsdK8j49fE2smoHmLtwyO6Ub3GTgn9GTX8Delw0k6kWFwIqR5jfM0XqNxtJpzEyWLTAyQRTt8gu1pfcgPusHVBc110aqLfps4E1Q+8IJyOh9PUSVus9WoRrewkbQhWFiFDkX4MoVq6Zi6+3n2JeSzd3uudAfWriVPhFE5g/1kunuzuau6P+p7lyuKdnPvkRmg3LTkQwWL+qQ/CyUO7mQWpBvO7Ly5N9kHqtnn1iHZOZgzfFsqksd0YoxtDfw8fLD++W43qFHM3nIwHU/uJ6o36Xid2sbtLys392E04zk6fWh2d2Dn1qjXFtQib7sN8zfa1zp5B6dXACqECOyEUdgZ7r0wb3W+18lfC3XBaJvNSQ9T3GqfDSZOa+/HiELv81GfxWRcnz5z0JDdFFEaQCyl33TqcvEDz2hCu3ginYyCc+JB+PvKBkZv7n8Jpr0/uXv+d4+EUFdecHS3XrcPJva65B8EVPiXoyGtd4u+ogLvh5F8R9l/r6qzvGbYuaK7PRxrrWh6b+/p74HKvj/1M96qJA2dOwYTWbXbyW3TS+0KbNiqqleYfEtOXDmeXhyJ/IG52ZTiw/cLOaT4QjxyhvqdJu9ABFRxg238O+Vrm5j79ngqnvT4IJ8CGy04qn8y/AM9HORBODEE48QHPRzkQTgyBEz7ARTkQTgyBEz7ARTkQTgyBEz7ARTkQTgyBEz7ARTkQTgyBEz7ARTkQTgyBEz7ARSme6g/tP/5IWawZPwAAAABJRU5ErkJggg==" />
+                                                                      </ui:WaitImageAppear.Image>
+                                                                      <ui:WaitImageAppear.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="84aec14b-0350-4772-b532-271350618b56">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                          <ui:Target.WaitForReady>
+                                                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                          </ui:Target.WaitForReady>
+                                                                        </ui:Target>
+                                                                      </ui:WaitImageAppear.Target>
+                                                                    </ui:WaitImageAppear>
+                                                                    <ui:SetClippingRegion Element="{x:Null}" Region="{x:Null}" Direction="TRANSLATE" DisplayName="Traducir zona de recorte" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SetClippingRegion_5">
+                                                                      <ui:SetClippingRegion.Size>
+                                                                        <ui:Region Rectangle="2, -25, -194, 45" />
+                                                                      </ui:SetClippingRegion.Size>
+                                                                    </ui:SetClippingRegion>
+                                                                  </Sequence>
+                                                                  <ui:GetOCRText WordsInfo="{x:Null}" ContinueOnError="True" DisplayName="Obtener texto OCR '#32770'" sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="GetOCRText_3">
+                                                                    <ui:GetOCRText.OCREngine>
+                                                                      <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                                                                        <ActivityFunc.Argument>
+                                                                          <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                                                                        </ActivityFunc.Argument>
+                                                                        <ui:GoogleOCR FilterRegion="{x:Null}" Output="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_4" Image="[Image]" Invert="False" Language="eng" Profile="Screen" Scale="2">
+                                                                          <ui:GoogleOCR.AllowedCharacters>
+                                                                            <InArgument x:TypeArguments="x:String">
+                                                                              <Literal x:TypeArguments="x:String" Value="" />
+                                                                            </InArgument>
+                                                                          </ui:GoogleOCR.AllowedCharacters>
+                                                                          <ui:GoogleOCR.DeniedCharacters>
+                                                                            <InArgument x:TypeArguments="x:String">
+                                                                              <Literal x:TypeArguments="x:String" Value="" />
+                                                                            </InArgument>
+                                                                          </ui:GoogleOCR.DeniedCharacters>
+                                                                        </ui:GoogleOCR>
+                                                                      </ActivityFunc>
+                                                                    </ui:GetOCRText.OCREngine>
+                                                                    <ui:GetOCRText.Target>
+                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="a4353eda-ff9c-4d8e-b3d3-b646f5588b4c" InformativeScreenshot="672743ff9d8eedfc670023e4d592df70">
+                                                                        <ui:Target.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                        </ui:Target.TimeoutMS>
+                                                                        <ui:Target.WaitForReady>
+                                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                        </ui:Target.WaitForReady>
+                                                                      </ui:Target>
+                                                                    </ui:GetOCRText.Target>
+                                                                    <ui:GetOCRText.Text>
+                                                                      <OutArgument x:TypeArguments="x:String">[ObtenerTexto]</OutArgument>
+                                                                    </ui:GetOCRText.Text>
+                                                                  </ui:GetOCRText>
+                                                                  <ui:SetClippingRegion Element="{x:Null}" Region="{x:Null}" Direction="RECTANGLE" DisplayName="Restablecer zona de recorte" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="SetClippingRegion_6">
+                                                                    <ui:SetClippingRegion.Size>
+                                                                      <ui:Region Rectangle="0, 0, 0, 0" />
+                                                                    </ui:SetClippingRegion.Size>
+                                                                  </ui:SetClippingRegion>
+                                                                </Sequence>
+                                                              </ActivityAction>
+                                                            </ui:WindowScope.Body>
+                                                          </ui:WindowScope>
+                                                        </Sequence>
+                                                      </State.Entry>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <av:Point x:Key="ShapeLocation">313,839.5</av:Point>
+                                                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <State.Transitions>
+                                                        <Transition DisplayName="T5" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_11">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                                              <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                                                              <av:PointCollection x:Key="ConnectorLocation">380,900.5 380,930.5 270,930.5 270,989.5</av:PointCollection>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Transition.Condition>
+                                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ObtenerTexto.Contains(&quot;ABIERTA&quot;)" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_5" />
+                                                          </Transition.Condition>
+                                                          <Transition.To>
+                                                            <State x:Name="__ReferenceID3" DisplayName="Tipificar" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_7">
+                                                              <State.Entry>
+                                                                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="494,1066" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                  <Sequence DisplayName="Tipificar" sap:VirtualizedContainerService.HintSize="452,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                                                    <Sequence.Variables>
+                                                                      <Variable x:TypeArguments="x:String" Name="Comentario" />
+                                                                    </Sequence.Variables>
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <If Condition="[caso(&quot;Tipo&quot;).ToString=&quot;Saliente&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="713,282" sap2010:WorkflowViewState.IdRef="If_1">
+                                                                      <If.Then>
+                                                                        <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="True" Text="INTERACCION SALIENTE[k(tab)]TELEFONO - SALIENTE[k(tab)]">
+                                                                          <ui:TypeInto.Target>
+                                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                              <ui:Target.TimeoutMS>
+                                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                                              </ui:Target.TimeoutMS>
+                                                                            </ui:Target>
+                                                                          </ui:TypeInto.Target>
+                                                                        </ui:TypeInto>
+                                                                      </If.Then>
+                                                                      <If.Else>
+                                                                        <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)][k(tab)]">
+                                                                          <ui:TypeInto.Target>
+                                                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                              <ui:Target.TimeoutMS>
+                                                                                <InArgument x:TypeArguments="x:Int32" />
+                                                                              </ui:Target.TimeoutMS>
+                                                                            </ui:Target>
+                                                                          </ui:TypeInto.Target>
+                                                                        </ui:TypeInto>
+                                                                      </If.Else>
+                                                                    </If>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="True" Text="RECOBRO[k(tab)]INCIDENCIA[k(tab)]RECOBRO[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="713,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[Comentario]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:String">["MARKTEL - "+caso("Cuscode").ToString+" - "+caso("Telefono").ToString+" - "+caso("Comentarios").ToString]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_21" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_22" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_23" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_24" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_9" SendWindowMessages="False" SimulateType="True" Text="[&quot;[k(tab)]&quot;+Comentario]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_25" SendWindowMessages="False" SimulateType="True" Text="%[d(lshift)][k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_26" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_27" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_28" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_29" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_30" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_31" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_32" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_33" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_34" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_35" SendWindowMessages="False" SimulateType="True" Text="%[k(tab)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" DelayBetweenKeys="1000" DisplayName="Escribir en 'FRAMESET  frset1'" EmptyField="False" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_36" SendWindowMessages="False" SimulateType="True" Text="%[u(lshift)]CERRADA[k(enter)]">
+                                                                      <ui:TypeInto.Target>
+                                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b4f2fd2a-6077-4ebd-8c72-887f57aa3756" InformativeScreenshot="23bf9aec5b4530fc074a725d555fb9fb" WaitForReady="COMPLETE">
+                                                                          <ui:Target.TimeoutMS>
+                                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                                          </ui:Target.TimeoutMS>
+                                                                        </ui:Target>
+                                                                      </ui:TypeInto.Target>
+                                                                    </ui:TypeInto>
+                                                                  </Sequence>
+                                                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="452,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                                                    <Assign.To>
+                                                                      <OutArgument x:TypeArguments="x:String">[ObtenerTexto]</OutArgument>
+                                                                    </Assign.To>
+                                                                    <Assign.Value>
+                                                                      <InArgument x:TypeArguments="x:String">
+                                                                        <Literal x:TypeArguments="x:String" Value="" />
+                                                                      </InArgument>
+                                                                    </Assign.Value>
+                                                                  </Assign>
+                                                                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'SiebelCom Page'" sap:VirtualizedContainerService.HintSize="452,768" sap2010:WorkflowViewState.IdRef="WindowScope_6" InformativeScreenshot="ea364344a15865ad2dda03c292ad72a7" Selector="&lt;html title='Siebel Communications for Wireless *' /&gt;">
+                                                                    <ui:WindowScope.Body>
+                                                                      <ActivityAction x:TypeArguments="x:Object">
+                                                                        <ActivityAction.Argument>
+                                                                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                                        </ActivityAction.Argument>
+                                                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,622" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                          <Sequence DisplayName="Buscar imagen relativa" sap:VirtualizedContainerService.HintSize="376,260" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                              </scg:Dictionary>
+                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                            <ui:WaitImageAppear FoundElement="{x:Null}" DisplayName="Buscar imagen '#32770'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitImageAppear_4">
+                                                                              <ui:WaitImageAppear.Image>
+                                                                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAASYAAAAVCAYAAADrXUNtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKnSURBVHhe7ZnpjcMgEIVTEsXgVpxKnEYsFxKlkXTAcgw2YIiPOMtIvB+f5JjDq3kzj2Nvr+dTAR683+/se/D/QIu6wJgYgWLgA7SoC4yJESgGPkCLusCYGIFi4AO0qAuMiREoBj5Ai7rAmBiBYuADtKjLYkyDVLfbLaIb4s45pqFXXT9k24rQt/bM3xJxMYzqLmI9PKIf1WvsldDPiOFvyBuT1kSKRQsh1X1M+1wAtE2NSRwMNBWPhDFdQXGVPqUN+Ia1FpTrolcTvZt6Y1I/0AXGtM+Ypl7aQMWrRLKik2CPYEURMhTRzyFUR33mwOtdl5jn0u2D3hHQuJY4ZExh8vpnuehkd1XzeMT3KCstdiwO2dwnbYTWpiMNRLCQfxoDYzLQLmZBqod57wNLif6Qum1eNZIdk5nDt4VC0txujtHNoX+HReXnd6tQm6J8a0xGBxP7ieKN+J4n1WJzd1TK/VSbcJ6NMS1rtGPHNKjOBNYirKs/5j7ro5y9c9KrgBWDguvEIKMz2G8V2uh70YrfCF/vmOZEXmKI+J7jsDFpcrmfLgyplp/GLHq2x847Jp3gJoDCiOMMyvWLjcmLZ44K4aoNY9oHjIkPKy2CnI3eE6Xc/2RMW2NK32qBbWNKAmvuipZ+sTG5I5orAhf0nDh7jnKZv6MBvjUmfyzYPsq1Gd8jrLWgXJ+vMeJY7st9/TvQcmuMfaZvtcaHO6YgmXWbTXyLdngfZNNGAbWC+QIxY+kidimI8uW32Y3hcvaCHdN8+Z1ohPgeJq+FNqfgstr+I8jHspT79D5nTFtjYEyABUVj2gKJfDmntQCXAGNiBIyJDzCmusCYGIFi4AO0qAuMiREoBj5Ai7rAmBiBYuADtKgLjIkRKAY+QIu6wJgYgWLgA7SoyVP9AZkGtlvRZfaFAAAAAElFTkSuQmCC" />
+                                                                              </ui:WaitImageAppear.Image>
+                                                                              <ui:WaitImageAppear.Target>
+                                                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="3ef1f955-eaaa-4700-9d17-f523efd0c6e2">
+                                                                                  <ui:Target.TimeoutMS>
+                                                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                                                  </ui:Target.TimeoutMS>
+                                                                                  <ui:Target.WaitForReady>
+                                                                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                                  </ui:Target.WaitForReady>
+                                                                                </ui:Target>
+                                                                              </ui:WaitImageAppear.Target>
+                                                                            </ui:WaitImageAppear>
+                                                                            <ui:SetClippingRegion Element="{x:Null}" Region="{x:Null}" Direction="TRANSLATE" DisplayName="Traducir zona de recorte" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SetClippingRegion_7">
+                                                                              <ui:SetClippingRegion.Size>
+                                                                                <ui:Region Rectangle="0, -23, -197, 43" />
+                                                                              </ui:SetClippingRegion.Size>
+                                                                            </ui:SetClippingRegion>
+                                                                          </Sequence>
+                                                                          <ui:GetOCRText WordsInfo="{x:Null}" DisplayName="Obtener texto OCR '#32770'" sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="GetOCRText_4">
+                                                                            <ui:GetOCRText.OCREngine>
+                                                                              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                                                                                <ActivityFunc.Argument>
+                                                                                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                                                                                </ActivityFunc.Argument>
+                                                                                <ui:GoogleOCR FilterRegion="{x:Null}" Output="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GoogleOCR_5" Image="[Image]" Invert="False" Language="eng" Profile="Screen" Scale="2">
+                                                                                  <ui:GoogleOCR.AllowedCharacters>
+                                                                                    <InArgument x:TypeArguments="x:String">
+                                                                                      <Literal x:TypeArguments="x:String" Value="" />
+                                                                                    </InArgument>
+                                                                                  </ui:GoogleOCR.AllowedCharacters>
+                                                                                  <ui:GoogleOCR.DeniedCharacters>
+                                                                                    <InArgument x:TypeArguments="x:String">
+                                                                                      <Literal x:TypeArguments="x:String" Value="" />
+                                                                                    </InArgument>
+                                                                                  </ui:GoogleOCR.DeniedCharacters>
+                                                                                </ui:GoogleOCR>
+                                                                              </ActivityFunc>
+                                                                            </ui:GetOCRText.OCREngine>
+                                                                            <ui:GetOCRText.Target>
+                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f04f957c-a1f7-4bf2-94e3-9beffe1037d4" InformativeScreenshot="e11733f5df53b7155096cf722bd4ae56">
+                                                                                <ui:Target.TimeoutMS>
+                                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                                </ui:Target.TimeoutMS>
+                                                                                <ui:Target.WaitForReady>
+                                                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                                </ui:Target.WaitForReady>
+                                                                              </ui:Target>
+                                                                            </ui:GetOCRText.Target>
+                                                                            <ui:GetOCRText.Text>
+                                                                              <OutArgument x:TypeArguments="x:String">[ObtenerTexto]</OutArgument>
+                                                                            </ui:GetOCRText.Text>
+                                                                          </ui:GetOCRText>
+                                                                          <ui:SetClippingRegion Element="{x:Null}" Region="{x:Null}" Direction="RECTANGLE" DisplayName="Restablecer zona de recorte" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="SetClippingRegion_8">
+                                                                            <ui:SetClippingRegion.Size>
+                                                                              <ui:Region Rectangle="0, 0, 0, 0" />
+                                                                            </ui:SetClippingRegion.Size>
+                                                                          </ui:SetClippingRegion>
+                                                                        </Sequence>
+                                                                      </ActivityAction>
+                                                                    </ui:WindowScope.Body>
+                                                                  </ui:WindowScope>
+                                                                </Sequence>
+                                                              </State.Entry>
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <av:Point x:Key="ShapeLocation">203,989.5</av:Point>
+                                                                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <State.Transitions>
+                                                                <Transition DisplayName="T6" sap2010:WorkflowViewState.IdRef="Transition_17">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                                                      <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                                                                      <av:PointCollection x:Key="ConnectorLocation">270,1050.5 270,1080.5 260,1080.5 260,1099.5</av:PointCollection>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                  <Transition.Condition>
+                                                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ObtenerTexto.Contains(&quot;CERRAD&quot;)" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
+                                                                  </Transition.Condition>
+                                                                  <Transition.To>
+                                                                    <State x:Name="__ReferenceID8" DisplayName="OK" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_8">
+                                                                      <State.Entry>
+                                                                        <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="338,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                                                          <ui:MultipleAssign.AssignOperations>
+                                                                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                                                                <ui:AssignOperation.To>
+                                                                                  <OutArgument x:TypeArguments="x:String">[caso("IDESTADO")]</OutArgument>
+                                                                                </ui:AssignOperation.To>
+                                                                                <ui:AssignOperation.Value>
+                                                                                  <InArgument x:TypeArguments="x:String">10</InArgument>
+                                                                                </ui:AssignOperation.Value>
+                                                                              </ui:AssignOperation>
+                                                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                                                                <ui:AssignOperation.To>
+                                                                                  <OutArgument x:TypeArguments="x:String">[caso("OBSERVACIONES")]</OutArgument>
+                                                                                </ui:AssignOperation.To>
+                                                                                <ui:AssignOperation.Value>
+                                                                                  <InArgument x:TypeArguments="x:String">
+                                                                                    <Literal x:TypeArguments="x:String" Value="" />
+                                                                                  </InArgument>
+                                                                                </ui:AssignOperation.Value>
+                                                                              </ui:AssignOperation>
+                                                                            </scg:List>
+                                                                          </ui:MultipleAssign.AssignOperations>
+                                                                        </ui:MultipleAssign>
+                                                                      </State.Entry>
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <av:Point x:Key="ShapeLocation">193,1099.5</av:Point>
+                                                                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                      <State.Transitions>
+                                                                        <Transition DisplayName="T11" sap2010:WorkflowViewState.IdRef="Transition_19">
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                                                              <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                                                                              <av:PointCollection x:Key="ConnectorLocation">260,1160.5 260,1229.5</av:PointCollection>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                          <Transition.To>
+                                                                            <State x:Name="__ReferenceID9" DisplayName="Update BBDD" sap:VirtualizedContainerService.HintSize="604,1377" sap2010:WorkflowViewState.IdRef="State_9">
+                                                                              <State.Entry>
+                                                                                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="558,1017" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                                                                  <Sequence.Variables>
+                                                                                    <Variable x:TypeArguments="ui:DatabaseConnection" Name="connect" />
+                                                                                  </Sequence.Variables>
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                  <ui:InterruptibleDoWhile Condition="[Continuar=False]" DisplayName="Hacer mientras" sap:VirtualizedContainerService.HintSize="516,925" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                                                                                    <ui:InterruptibleDoWhile.Body>
+                                                                                      <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="480,760" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                          </scg:Dictionary>
+                                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                                        <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="438,668" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                                                                          <TryCatch.Try>
+                                                                                            <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,441" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                </scg:Dictionary>
+                                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                                              <ui:DatabaseConnect DatabaseConnection="[connect]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_4" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_ORANGE;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                                                                                              <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[connect]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_2" Sql="[&quot;update RPA_SIEBEL set Fecha_Siebel=getdate(),observaciones='&quot;+caso(&quot;OBSERVACIONES&quot;)+&quot;',IDStado='&quot;+caso(&quot;IDESTADO&quot;)+&quot;' where ID='&quot;+caso(&quot;ID&quot;)+&quot;'&quot;]">
+                                                                                                <ui:ExecuteNonQuery.Parameters>
+                                                                                                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                                                                                </ui:ExecuteNonQuery.Parameters>
+                                                                                              </ui:ExecuteNonQuery>
+                                                                                              <ui:DatabaseDisconnect DatabaseConnection="[connect]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_4" />
+                                                                                              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                                                                                <Assign.To>
+                                                                                                  <OutArgument x:TypeArguments="x:Boolean">[Continuar]</OutArgument>
+                                                                                                </Assign.To>
+                                                                                                <Assign.Value>
+                                                                                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                                                                </Assign.Value>
+                                                                                              </Assign>
+                                                                                            </Sequence>
+                                                                                          </TryCatch.Try>
+                                                                                          <TryCatch.Catches>
+                                                                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                </scg:Dictionary>
+                                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                                              <ActivityAction x:TypeArguments="s:Exception">
+                                                                                                <ActivityAction.Argument>
+                                                                                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                                                                </ActivityAction.Argument>
+                                                                                                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                                                                                  <Assign.To>
+                                                                                                    <OutArgument x:TypeArguments="x:Boolean">[Continuar]</OutArgument>
+                                                                                                  </Assign.To>
+                                                                                                  <Assign.Value>
+                                                                                                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                                                                  </Assign.Value>
+                                                                                                </Assign>
+                                                                                              </ActivityAction>
+                                                                                            </Catch>
+                                                                                          </TryCatch.Catches>
+                                                                                        </TryCatch>
+                                                                                      </Sequence>
+                                                                                    </ui:InterruptibleDoWhile.Body>
+                                                                                  </ui:InterruptibleDoWhile>
+                                                                                </Sequence>
+                                                                              </State.Entry>
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <av:Point x:Key="ShapeLocation">193,1229.5</av:Point>
+                                                                                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                              <State.Transitions>
+                                                                                <Transition DisplayName="T13" sap2010:WorkflowViewState.IdRef="Transition_18">
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                                                                      <x:Int32 x:Key="DestConnectionPointIndex">34</x:Int32>
+                                                                                      <av:PointCollection x:Key="ConnectorLocation">260,1290.5 260,1320.5 253.3,1320.5 253.3,1329.5</av:PointCollection>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                  <Transition.To>
+                                                                                    <State x:Name="__ReferenceID2" DisplayName="Estado final" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                          <av:Point x:Key="ShapeLocation">193,1329.5</av:Point>
+                                                                                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                        </scg:Dictionary>
+                                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                                    </State>
+                                                                                  </Transition.To>
+                                                                                </Transition>
+                                                                              </State.Transitions>
+                                                                            </State>
+                                                                          </Transition.To>
+                                                                        </Transition>
+                                                                      </State.Transitions>
+                                                                    </State>
+                                                                  </Transition.To>
+                                                                </Transition>
+                                                                <Transition DisplayName="T10" sap2010:WorkflowViewState.IdRef="Transition_15">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <av:PointCollection x:Key="ConnectorLocation">203,1029.15 173,1029.15 173,1026.1 137,1026.1</av:PointCollection>
+                                                                      <x:Int32 x:Key="SrcConnectionPointIndex">49</x:Int32>
+                                                                      <x:Int32 x:Key="DestConnectionPointIndex">44</x:Int32>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                  <Transition.Condition>[ObtenerTexto.Contains("CERRAD")=false]</Transition.Condition>
+                                                                  <Transition.To>
+                                                                    <State x:Name="__ReferenceID14" DisplayName="ErrorTipificar" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_14">
+                                                                      <State.Entry>
+                                                                        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                                                          <Assign.To>
+                                                                            <OutArgument x:TypeArguments="x:Boolean">[errorTipificar]</OutArgument>
+                                                                          </Assign.To>
+                                                                          <Assign.Value>
+                                                                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                                          </Assign.Value>
+                                                                        </Assign>
+                                                                      </State.Entry>
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <av:Point x:Key="ShapeLocation">3,989.5</av:Point>
+                                                                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                      <State.Transitions>
+                                                                        <Transition DisplayName="T24" sap2010:WorkflowViewState.IdRef="Transition_32">
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <av:PointCollection x:Key="ConnectorLocation">29.8,989.5 29.8,136.1 193,136.1</av:PointCollection>
+                                                                              <x:Int32 x:Key="SrcConnectionPointIndex">14</x:Int32>
+                                                                              <x:Int32 x:Key="DestConnectionPointIndex">45</x:Int32>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                          <Transition.To>
+                                                                            <State x:Name="__ReferenceID10" DisplayName="Reintento" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_12">
+                                                                              <State.Entry>
+                                                                                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="418,533" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,341" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                                                                    <Sequence.Variables>
+                                                                                      <Variable x:TypeArguments="ui:DatabaseConnection" Name="connect" />
+                                                                                    </Sequence.Variables>
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <ui:DatabaseConnect DatabaseConnection="[connect]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_3" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_ORANGE;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                                                                                    <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[connect]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_3" Sql="update notificar set Ultima_Fecha=getdate(), notificado='N'">
+                                                                                      <ui:ExecuteNonQuery.Parameters>
+                                                                                        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                                                                      </ui:ExecuteNonQuery.Parameters>
+                                                                                    </ui:ExecuteNonQuery>
+                                                                                    <ui:DatabaseDisconnect DatabaseConnection="[connect]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_3" />
+                                                                                  </Sequence>
+                                                                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                                                                    <Assign.To>
+                                                                                      <OutArgument x:TypeArguments="x:Int32">[Reintento]</OutArgument>
+                                                                                    </Assign.To>
+                                                                                    <Assign.Value>
+                                                                                      <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                                                                    </Assign.Value>
+                                                                                  </Assign>
+                                                                                </Sequence>
+                                                                              </State.Entry>
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <av:Point x:Key="ShapeLocation">193,99.5</av:Point>
+                                                                                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                              <State.Transitions>
+                                                                                <Transition DisplayName="T15" sap2010:WorkflowViewState.IdRef="Transition_25">
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                                                                      <x:Int32 x:Key="DestConnectionPointIndex">46</x:Int32>
+                                                                                      <av:PointCollection x:Key="ConnectorLocation">260,160.5 260,190.5 263.4,190.5 263.4,209.5</av:PointCollection>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                  <Transition.To>
+                                                                                    <x:Reference>__ReferenceID0</x:Reference>
+                                                                                  </Transition.To>
+                                                                                </Transition>
+                                                                              </State.Transitions>
+                                                                            </State>
+                                                                          </Transition.To>
+                                                                        </Transition>
+                                                                      </State.Transitions>
+                                                                    </State>
+                                                                  </Transition.To>
+                                                                </Transition>
+                                                              </State.Transitions>
+                                                            </State>
+                                                          </Transition.To>
+                                                        </Transition>
+                                                        <Transition DisplayName="T9" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_14">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <av:PointCollection x:Key="ConnectorLocation">359.9,900.5 359.9,912 288,912 288,873.05 313,873.05</av:PointCollection>
+                                                              <x:Int32 x:Key="SrcConnectionPointIndex">27</x:Int32>
+                                                              <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Transition.To>
+                                                            <x:Reference>__ReferenceID1</x:Reference>
+                                                          </Transition.To>
+                                                          <Transition.Condition>[ObtenerTexto.Contains("ABIERTA")=false and Reintento&lt;3]</Transition.Condition>
+                                                        </Transition>
+                                                        <Transition DisplayName="T21" sap2010:WorkflowViewState.IdRef="Transition_30">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <av:PointCollection x:Key="ConnectorLocation">447,873.05 477,873.05 477,864.5 492,864.5</av:PointCollection>
+                                                              <x:Int32 x:Key="SrcConnectionPointIndex">40</x:Int32>
+                                                              <x:Int32 x:Key="DestConnectionPointIndex">57</x:Int32>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Transition.Condition>[ObtenerTexto.Contains("ABIERTA")=false and Reintento&gt;=3]</Transition.Condition>
+                                                          <Transition.To>
+                                                            <State x:Name="__ReferenceID4" DisplayName="Error" sap:VirtualizedContainerService.HintSize="185,860" sap2010:WorkflowViewState.IdRef="State_10">
+                                                              <State.Entry>
+                                                                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:Object">[Config("ErrorSiebel")]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:Object">[true]</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                              </State.Entry>
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <av:Point x:Key="ShapeLocation">492,219.5</av:Point>
+                                                                  <av:Size x:Key="ShapeSize">185,860</av:Size>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  <x:Double x:Key="StateContainerWidth">151</x:Double>
+                                                                  <x:Double x:Key="StateContainerHeight">824</x:Double>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <State.Transitions>
+                                                                <Transition DisplayName="T14" sap2010:WorkflowViewState.IdRef="Transition_20">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <av:PointCollection x:Key="ConnectorLocation">584.5,1079.5 584.5,1360 327,1360</av:PointCollection>
+                                                                      <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                                                      <x:Int32 x:Key="DestConnectionPointIndex">36</x:Int32>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                  <Transition.To>
+                                                                    <x:Reference>__ReferenceID2</x:Reference>
+                                                                  </Transition.To>
+                                                                </Transition>
+                                                              </State.Transitions>
+                                                            </State>
+                                                          </Transition.To>
+                                                        </Transition>
+                                                      </State.Transitions>
+                                                    </State>
+                                                  </Transition.To>
+                                                </Transition>
+                                                <Transition DisplayName="T22" sap2010:WorkflowViewState.IdRef="Transition_31">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:PointCollection x:Key="ConnectorLocation">193,776.95 106.6,776.95 106.6,829.5</av:PointCollection>
+                                                      <x:Int32 x:Key="SrcConnectionPointIndex">33</x:Int32>
+                                                      <x:Int32 x:Key="DestConnectionPointIndex">30</x:Int32>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Transition.Condition>[errorTipificar=true]</Transition.Condition>
+                                                  <Transition.To>
+                                                    <State x:Name="__ReferenceID13" DisplayName="clik Abierta" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_15">
+                                                      <State.Entry>
+                                                        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="476,436" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'SiebelCom Page'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="WindowScope_13" InformativeScreenshot="444379f22110b84f8b5fc3827e0bcd90" Selector="&lt;html title='Siebel Communications for Wireless *' /&gt;">
+                                                            <ui:WindowScope.Body>
+                                                              <ActivityAction x:TypeArguments="x:Object">
+                                                                <ActivityAction.Argument>
+                                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                                </ActivityAction.Argument>
+                                                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic en imagen 'iexplore.exe Siebel'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ClickImage_13" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                                    <ui:ClickImage.CursorPosition>
+                                                                      <ui:CursorPosition Position="Center">
+                                                                        <ui:CursorPosition.OffsetX>
+                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                        </ui:CursorPosition.OffsetX>
+                                                                        <ui:CursorPosition.OffsetY>
+                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                        </ui:CursorPosition.OffsetY>
+                                                                      </ui:CursorPosition>
+                                                                    </ui:ClickImage.CursorPosition>
+                                                                    <ui:ClickImage.Image>
+                                                                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF8AAAATCAYAAAD21tHiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVFhH7ZbBDcMgDEU9FwMxD9NkGYZxMTXBEJOkl1pCfhIHQtxajx8SQMcMl2+IyzfE5Rvi8g1x+YYM8o8IGFLmGZMTBgAEMeIh1kLCfMRhHSBg/RmlFqhYu14H1zFqPxvR5ZOQmDCFiM1tpQnmaVGCUcpt8s8dEdzVMjkFXfCqn4045VPKvqEMPdmEJrDNf5bf/6exkr/sZyNYPiWSEzYLo/l8PDQbUr5cnzen3ky8Tf5NPxtR5c8ChnTeCZTytXjSutyUMmbRmvzbfjaiyCeZo6A6lukVMt7IP2uvqSeu8h/62QgoJhVxubzopnR/FwrKkfD2zKd5q2Uu8p/62QhYfk00CVXYmMLTjZSv3TPLL9BTI1M8yifJD/1sRP/UdP6OyzfE5Rvi8g1x+WYgfgDSPb9Hx09y0gAAAABJRU5ErkJggg==" />
+                                                                    </ui:ClickImage.Image>
+                                                                    <ui:ClickImage.Target>
+                                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="e4d6ea56-7dd0-4a74-9af1-f1d0477a9d9a">
+                                                                        <ui:Target.TimeoutMS>
+                                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                                        </ui:Target.TimeoutMS>
+                                                                        <ui:Target.WaitForReady>
+                                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                        </ui:Target.WaitForReady>
+                                                                      </ui:Target>
+                                                                    </ui:ClickImage.Target>
+                                                                  </ui:ClickImage>
+                                                                </Sequence>
+                                                              </ActivityAction>
+                                                            </ui:WindowScope.Body>
+                                                          </ui:WindowScope>
+                                                        </Sequence>
+                                                      </State.Entry>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <av:Point x:Key="ShapeLocation">53,829.5</av:Point>
+                                                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <State.Transitions>
+                                                        <Transition DisplayName="T23" sap2010:WorkflowViewState.IdRef="Transition_33">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <av:PointCollection x:Key="ConnectorLocation">113.3,890.5 113.3,920.5 236.5,920.5 236.5,989.5</av:PointCollection>
+                                                              <x:Int32 x:Key="SrcConnectionPointIndex">35</x:Int32>
+                                                              <x:Int32 x:Key="DestConnectionPointIndex">18</x:Int32>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Transition.To>
+                                                            <x:Reference>__ReferenceID3</x:Reference>
+                                                          </Transition.To>
+                                                        </Transition>
+                                                      </State.Transitions>
+                                                    </State>
+                                                  </Transition.To>
+                                                </Transition>
+                                              </State.Transitions>
+                                            </State>
+                                          </Transition.To>
+                                        </Transition>
+                                        <Transition DisplayName="T19" sap2010:WorkflowViewState.IdRef="Transition_29">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:PointCollection x:Key="ConnectorLocation">327,680 357,680 357,692.5 492,692.5</av:PointCollection>
+                                              <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
+                                              <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Transition.To>
+                                            <x:Reference>__ReferenceID4</x:Reference>
+                                          </Transition.To>
+                                          <Transition.Condition>[Continuar=False]</Transition.Condition>
+                                        </Transition>
+                                      </State.Transitions>
+                                    </State>
+                                  </Transition.To>
+                                </Transition>
+                                <Transition DisplayName="T8" sap2010:WorkflowViewState.IdRef="Transition_13">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:PointCollection x:Key="ConnectorLocation">226.5,580.5 226.5,610 163,610 163,550 193,550</av:PointCollection>
+                                      <x:Int32 x:Key="SrcConnectionPointIndex">19</x:Int32>
+                                      <x:Int32 x:Key="DestConnectionPointIndex">37</x:Int32>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Transition.To>
+                                    <x:Reference>__ReferenceID5</x:Reference>
+                                  </Transition.To>
+                                  <Transition.Condition>[ObtenerTexto="" and Reintento&lt;5]</Transition.Condition>
+                                </Transition>
+                                <Transition DisplayName="T18" sap2010:WorkflowViewState.IdRef="Transition_26">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:PointCollection x:Key="ConnectorLocation">327,546.95 357,546.95 357,520.5 492,520.5</av:PointCollection>
+                                      <x:Int32 x:Key="SrcConnectionPointIndex">32</x:Int32>
+                                      <x:Int32 x:Key="DestConnectionPointIndex">25</x:Int32>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Transition.To>
+                                    <x:Reference>__ReferenceID4</x:Reference>
+                                  </Transition.To>
+                                  <Transition.Condition>[ObtenerTexto="" and Reintento&gt;=5]</Transition.Condition>
+                                </Transition>
+                              </State.Transitions>
+                            </State>
+                          </Transition.To>
+                        </Transition>
+                      </State.Transitions>
+                    </State>
+                  </Transition.To>
+                </Transition>
+                <Transition DisplayName="T7" sap2010:WorkflowViewState.IdRef="Transition_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">193,340 163,340 163,240 183,240</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">37</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">37</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <x:Reference>__ReferenceID0</x:Reference>
+                  </Transition.To>
+                  <Transition.Condition>[caso("Cuscode").ToString&lt;&gt;cuscode and Reintento&lt;5]</Transition.Condition>
+                </Transition>
+                <Transition DisplayName="T16" sap2010:WorkflowViewState.IdRef="Transition_24">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">327,346.1 357,346.1 357,348.5 492,348.5</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">44</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">9</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <x:Reference>__ReferenceID4</x:Reference>
+                  </Transition.To>
+                  <Transition.Condition>[caso("Cuscode").ToString&lt;&gt;cuscode and Reintento&gt;=5]</Transition.Condition>
+                </Transition>
+              </State.Transitions>
+            </State>
+          </Transition.To>
+        </Transition>
+        <Transition DisplayName="T12" sap2010:WorkflowViewState.IdRef="Transition_21">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">317,252.2 347,252.2 347,262.5 492,262.5</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">52</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">1</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID4</x:Reference>
+          </Transition.To>
+          <Transition.Condition>[Continuar=false]</Transition.Condition>
+        </Transition>
+      </State.Transitions>
+    </State>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+    <x:Reference>__ReferenceID10</x:Reference>
+    <x:Reference>__ReferenceID11</x:Reference>
+    <x:Reference>__ReferenceID12</x:Reference>
+    <x:Reference>__ReferenceID13</x:Reference>
+    <x:Reference>__ReferenceID14</x:Reference>
+    <StateMachine.Variables>
+      <Variable x:TypeArguments="x:String" Name="cuscode" />
+      <Variable x:TypeArguments="x:String" Name="ObtenerTexto" />
+      <Variable x:TypeArguments="x:Boolean" Name="Continuar" />
+      <Variable x:TypeArguments="x:Int32" Name="Reintento" />
+      <Variable x:TypeArguments="x:Boolean" Name="errorTipificar" />
+    </StateMachine.Variables>
+  </StateMachine>
+</Activity>

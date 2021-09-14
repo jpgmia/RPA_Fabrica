@@ -1,0 +1,1312 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Máquinadeestado" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="caso" Type="InOutArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>721,1561</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Máquinadeestado_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="58">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Java.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <StateMachine InitialState="{x:Reference __ReferenceID11}" DisplayName="Máquinadeestado" sap:VirtualizedContainerService.HintSize="731,1456" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">230,2.5</av:Point>
+        <x:Double x:Key="StateContainerWidth">697</x:Double>
+        <x:Double x:Key="StateContainerHeight">1420</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">260,77.5 260,99.5</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <State x:Name="__ReferenceID3" DisplayName="Buscar" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_2">
+      <State.Entry>
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="656,2034" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="614,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[Continuar]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="614,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[Reintento]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[Reintento+1]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'chrome.exe Centro'" sap:VirtualizedContainerService.HintSize="614,726" sap2010:WorkflowViewState.IdRef="WindowScope_21" InformativeScreenshot="e22290f6ff7a30276b13157867be70e8" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;">
+            <ui:WindowScope.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,580" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Comprobar 'INPUT  ida'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_4">
+                    <ui:Check.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a4406b6d-2a35-4bfa-93ef-9aefefc8f35d" InformativeScreenshot="ae416f1472bb68fcde54e73520385de1" Selector="&lt;webctrl tag='INPUT' type='checkbox' name='docContainer:choiceDoc' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Check.Target>
+                  </ui:Check>
+                  <Delay DisplayName="Retraso" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                  <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Establecer texto 'INPUT'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SetValue_2" Text="[caso(&quot;Cuscode&quot;).ToString]">
+                    <ui:SetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cea35907-ff1f-423b-908d-031819d1716c" InformativeScreenshot="616b9e791db267ba3177befa1a5bf43a" Selector="&lt;webctrl name='docContainer:docInput' tag='INPUT' type='text' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SetValue.Target>
+                  </ui:SetValue>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'INPUT  idc'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="33fe6fba-7be9-4593-8b47-7d273c5d61e4" InformativeScreenshot="116fe4e6dd373029239b517d1d92e0e1" Selector="&lt;webctrl tag='INPUT' type='submit' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                </Sequence>
+              </ActivityAction>
+            </ui:WindowScope.Body>
+          </ui:WindowScope>
+          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="614,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[cuscode]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" ContinueOnError="True" DisplayName="Asociar ventana 'iexplore.exe Siebel'" sap:VirtualizedContainerService.HintSize="614,344" sap2010:WorkflowViewState.IdRef="WindowScope_15" InformativeScreenshot="e22290f6ff7a30276b13157867be70e8" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Centro Atencion al Cliente Jazztel - Google Chrome' /&gt;">
+            <ui:WindowScope.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Obtener texto completo 'TD'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_4">
+                    <ui:GetFullText.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="63ef6f17-4559-4473-8980-0fd1b924476d" InformativeScreenshot="c47bbb0a7b60eb9d1ee7aae7eb5d7bbf" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl class='jazztel-table' tag='TABLE' /&gt;&lt;webctrl tableCol='2' tag='TD' colName='Documento' tableRow='2' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetFullText.Target>
+                    <ui:GetFullText.Text>
+                      <OutArgument x:TypeArguments="x:String">[cuscode]</OutArgument>
+                    </ui:GetFullText.Text>
+                  </ui:GetFullText>
+                </Sequence>
+              </ActivityAction>
+            </ui:WindowScope.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:WindowScope>
+          <If Condition="[cuscode=&quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="614,492" sap2010:WorkflowViewState.IdRef="If_5">
+            <If.Then>
+              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" ContinueOnError="True" DisplayName="Asociar ventana 'iexplore.exe Siebel'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="WindowScope_16" InformativeScreenshot="e22290f6ff7a30276b13157867be70e8" Selector="&lt;wnd app='chrome.exe' omit:cls='Chrome_WidgetWin_1' title='Centro Atencion al Cliente Jazztel - Google Chrome' /&gt;">
+                <ui:WindowScope.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:UiElementExists DisplayName="Elemento existente 'SPAN'" Exists="[NoExsiteDNI]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7cce87f4-b050-49ef-a09f-62db8f2414df" InformativeScreenshot="680a3b06c13c8293026876fb28dafd12" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl tag='SPAN' aaname='Búsqueda sin resultados' /&gt;" TimeoutMS="1000">
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:UiElementExists.Target>
+                      </ui:UiElementExists>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:WindowScope.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:WindowScope>
+            </If.Then>
+          </If>
+        </Sequence>
+      </State.Entry>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">183,209.5</av:Point>
+          <av:Size x:Key="ShapeSize">134,61</av:Size>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State.Transitions>
+        <Transition DisplayName="T2" sap2010:WorkflowViewState.IdRef="Transition_23">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+              <av:PointCollection x:Key="ConnectorLocation">256.7,270.5 256.7,300.5 260,300.5 260,379.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="caso(&quot;Cuscode&quot;).ToString=cuscode" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+          </Transition.Condition>
+          <Transition.To>
+            <State x:Name="__ReferenceID8" DisplayName="Reintento" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_11">
+              <State.Entry>
+                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[Reintento]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </State.Entry>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">193,379.5</av:Point>
+                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <State.Transitions>
+                <Transition DisplayName="T17" sap2010:WorkflowViewState.IdRef="Transition_22">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                      <av:PointCollection x:Key="ConnectorLocation">260,440.5 260,599.5</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <State x:Name="__ReferenceID4" DisplayName="ir" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_4">
+                      <State.Entry>
+                        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="698,1168" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="656,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[Reintento]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[Reintento+1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:UiElementExists DisplayName="Elemento existente 'TD'" Exists="[ExistTelefono]" sap:VirtualizedContainerService.HintSize="656,106" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+                            <ui:UiElementExists.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e71c030c-a89a-4711-9465-af677c202667" InformativeScreenshot="489d8e87c4f64d519438911c38fd3731" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl tag='SPAN' tableCol='4' tableRow='2' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:UiElementExists.Target>
+                          </ui:UiElementExists>
+                          <If Condition="[ExistTelefono=True]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="656,830" sap2010:WorkflowViewState.IdRef="If_6">
+                            <If.Then>
+                              <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="476,682" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'SPAN'" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a5d24199-ac2c-4de3-a447-9bfac64e1cb0" InformativeScreenshot="fb7320423829a010a6c7000ea9904991" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl tag='SPAN' tableCol='4' tableRow='2' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[cuscode]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <Literal x:TypeArguments="x:String" Value="" />
+                                    </InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'chrome.exe Centro'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="WindowScope_22" InformativeScreenshot="cd8fede0b5501ab7033a45cc0e8741e2" Selector="&lt;wnd app='chrome.exe' omit:cls='Chrome_WidgetWin_1' title='Centro Atencion al Cliente Jazztel - Google Chrome' /&gt;">
+                                  <ui:WindowScope.Body>
+                                    <ActivityAction x:TypeArguments="x:Object">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Obtener texto completo 'TD'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_6">
+                                          <ui:GetFullText.Target>
+                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="515ff212-0db1-4aca-ae21-980a5f9f3636" InformativeScreenshot="63492a198d6a1907fd2801643113aa54" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id*' tag='IFRAME' /&gt;&lt;webctrl tag='TD' rowName='Documento:' idx='2' /&gt;">
+                                              <ui:Target.TimeoutMS>
+                                                <InArgument x:TypeArguments="x:Int32" />
+                                              </ui:Target.TimeoutMS>
+                                              <ui:Target.WaitForReady>
+                                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                                              </ui:Target.WaitForReady>
+                                            </ui:Target>
+                                          </ui:GetFullText.Target>
+                                          <ui:GetFullText.Text>
+                                            <OutArgument x:TypeArguments="x:String">[cuscode]</OutArgument>
+                                          </ui:GetFullText.Text>
+                                        </ui:GetFullText>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:WindowScope.Body>
+                                </ui:WindowScope>
+                              </Sequence>
+                            </If.Then>
+                          </If>
+                        </Sequence>
+                      </State.Entry>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">193,599.5</av:Point>
+                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <State.Transitions>
+                        <Transition DisplayName="T3" sap2010:WorkflowViewState.IdRef="Transition_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                              <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                              <av:PointCollection x:Key="ConnectorLocation">260,660.5 260,699.5</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Transition.Condition>
+                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="cuscode.Contains(caso(&quot;Cuscode&quot;).ToString) and ExistTelefono=True" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+                          </Transition.Condition>
+                          <Transition.To>
+                            <State x:Name="__ReferenceID5" DisplayName="interaciones" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_5">
+                              <State.Entry>
+                                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="476,966" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'chrome.exe Centro'" sap:VirtualizedContainerService.HintSize="434,490" sap2010:WorkflowViewState.IdRef="WindowScope_18" InformativeScreenshot="64e0ddc698f655276c9db83f4143258d" Selector="&lt;wnd app='chrome.exe' omit:cls='Chrome_WidgetWin_1' title='Centro Atencion al Cliente Jazztel - Google Chrome' /&gt;">
+                                    <ui:WindowScope.Body>
+                                      <ActivityAction x:TypeArguments="x:Object">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:UiElementExists Exists="{x:Null}" DisplayName="Elemento existente 'SysListView32'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                                            <ui:UiElementExists.Target>
+                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9d6a41b2-7971-4d74-b54e-6ad32106d11f" InformativeScreenshot="faa522b93881bf46bc5e3f6056c9a5e2" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id/*' tag='IFRAME' /&gt;&lt;webctrl aaname='Grabar LLamada' tag='SPAN' /&gt;">
+                                                <ui:Target.TimeoutMS>
+                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                </ui:Target.TimeoutMS>
+                                                <ui:Target.WaitForReady>
+                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                </ui:Target.WaitForReady>
+                                              </ui:Target>
+                                            </ui:UiElementExists.Target>
+                                          </ui:UiElementExists>
+                                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                            <ui:Click.CursorPosition>
+                                              <ui:CursorPosition Position="Center">
+                                                <ui:CursorPosition.OffsetX>
+                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                </ui:CursorPosition.OffsetX>
+                                                <ui:CursorPosition.OffsetY>
+                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                </ui:CursorPosition.OffsetY>
+                                              </ui:CursorPosition>
+                                            </ui:Click.CursorPosition>
+                                            <ui:Click.Target>
+                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8695583b-22ba-481d-814c-0c3983e2e538" InformativeScreenshot="04dfc230a9ec8bdf8b232b8d294b13d0" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id/*' tag='IFRAME' /&gt;&lt;webctrl aaname='Grabar LLamada' tag='SPAN' /&gt;">
+                                                <ui:Target.TimeoutMS>
+                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                </ui:Target.TimeoutMS>
+                                                <ui:Target.WaitForReady>
+                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                </ui:Target.WaitForReady>
+                                              </ui:Target>
+                                            </ui:Click.Target>
+                                          </ui:Click>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </ui:WindowScope.Body>
+                                  </ui:WindowScope>
+                                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'chrome.exe Centro'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="WindowScope_19" InformativeScreenshot="3e6ce673d5fa0528d4d3fdf7a032d4e5" Selector="&lt;wnd app='chrome.exe' omit:cls='Chrome_WidgetWin_1' title='Centro Atencion al Cliente Jazztel - Google Chrome' /&gt;">
+                                    <ui:WindowScope.Body>
+                                      <ActivityAction x:TypeArguments="x:Object">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:UiElementExists DisplayName="Elemento existente 'SELECT  id48'" Exists="[Continuar]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                                            <ui:UiElementExists.Target>
+                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8e9066c5-a5a4-4a82-a1c6-63ab1e19c147" InformativeScreenshot="3cd626854904722338573af274735917" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id/*' tag='IFRAME' /&gt;&lt;webctrl tag='SELECT' colName='                         Tipo*:                                                   Seleccione uno Entrante Saliente Backoffice                      ' /&gt;">
+                                                <ui:Target.TimeoutMS>
+                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                </ui:Target.TimeoutMS>
+                                                <ui:Target.WaitForReady>
+                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                </ui:Target.WaitForReady>
+                                              </ui:Target>
+                                            </ui:UiElementExists.Target>
+                                          </ui:UiElementExists>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </ui:WindowScope.Body>
+                                  </ui:WindowScope>
+                                </Sequence>
+                              </State.Entry>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">193,699.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <State.Transitions>
+                                <Transition DisplayName="T19" sap2010:WorkflowViewState.IdRef="Transition_29">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:PointCollection x:Key="ConnectorLocation">327,730 357,730 357,692.5 492,692.5</av:PointCollection>
+                                      <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
+                                      <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Transition.Condition>
+                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Continuar=False" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_9" />
+                                  </Transition.Condition>
+                                  <Transition.To>
+                                    <State x:Name="__ReferenceID1" DisplayName="Error" sap:VirtualizedContainerService.HintSize="185,860" sap2010:WorkflowViewState.IdRef="State_10">
+                                      <State.Entry>
+                                        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:Object">[Config("ErrorSiebel")]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:Object">[true]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </State.Entry>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">492,219.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">185,860</av:Size>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          <x:Double x:Key="StateContainerWidth">151</x:Double>
+                                          <x:Double x:Key="StateContainerHeight">824</x:Double>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <State.Transitions>
+                                        <Transition DisplayName="T14" sap2010:WorkflowViewState.IdRef="Transition_20">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:PointCollection x:Key="ConnectorLocation">584.5,1079.5 584.5,1360 327,1360</av:PointCollection>
+                                              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                              <x:Int32 x:Key="DestConnectionPointIndex">36</x:Int32>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Transition.To>
+                                            <State x:Name="__ReferenceID0" DisplayName="Estado final" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">193,1329.5</av:Point>
+                                                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </State>
+                                          </Transition.To>
+                                        </Transition>
+                                      </State.Transitions>
+                                    </State>
+                                  </Transition.To>
+                                </Transition>
+                                <Transition DisplayName="T4" sap2010:WorkflowViewState.IdRef="Transition_28">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                      <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                                      <av:PointCollection x:Key="ConnectorLocation">260,760.5 260,790.5 270,790.5 270,989.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Transition.Condition>
+                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Continuar=True" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_3" />
+                                  </Transition.Condition>
+                                  <Transition.To>
+                                    <State x:Name="__ReferenceID6" DisplayName="Tipificar" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_7">
+                                      <State.Entry>
+                                        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="477,2182" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Asociar ventana 'chrome.exe Centro'" sap:VirtualizedContainerService.HintSize="435,2090" sap2010:WorkflowViewState.IdRef="WindowScope_20" InformativeScreenshot="3e6ce673d5fa0528d4d3fdf7a032d4e5" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Centro Atencion al Cliente Jazztel - Google Chrome' /&gt;">
+                                            <ui:WindowScope.Body>
+                                              <ActivityAction x:TypeArguments="x:Object">
+                                                <ActivityAction.Argument>
+                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                </ActivityAction.Argument>
+                                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="401,1944" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Seleccionar elemento 'SELECT  id48'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[caso(&quot;Tipo&quot;).ToString]">
+                                                    <ui:SelectItem.Items>
+                                                      <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                        <x:String>Seleccione uno</x:String>
+                                                        <x:String>Entrante</x:String>
+                                                        <x:String>Saliente</x:String>
+                                                        <x:String>Backoffice</x:String>
+                                                      </scg:List>
+                                                    </ui:SelectItem.Items>
+                                                    <ui:SelectItem.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a12d1819-d68f-4e4e-b080-f5b56964d0bc" InformativeScreenshot="183213b64602a36bcfb6b81a329fa4e8" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id*' tag='IFRAME' /&gt;&lt;webctrl tag='SELECT' colName='                         Tipo*:                                                   Seleccione uno Entrante Saliente Backoffice                      ' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:SelectItem.Target>
+                                                  </ui:SelectItem>
+                                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayAfter="1000" DisplayName="Seleccionar elemento 'SELECT  id48'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="Gestión Cobros">
+                                                    <ui:SelectItem.Items>
+                                                      <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                        <x:String>Seleccione uno</x:String>
+                                                        <x:String>Entrante</x:String>
+                                                        <x:String>Saliente</x:String>
+                                                        <x:String>Backoffice</x:String>
+                                                      </scg:List>
+                                                    </ui:SelectItem.Items>
+                                                    <ui:SelectItem.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a12d1819-d68f-4e4e-b080-f5b56964d0bc" InformativeScreenshot="183213b64602a36bcfb6b81a329fa4e8" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id/*' tag='IFRAME' /&gt;&lt;webctrl tag='SELECT' colName='                         Tipo*:                                                   Seleccione uno Entrante Saliente Backoffice                      ' idx='2' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:SelectItem.Target>
+                                                  </ui:SelectItem>
+                                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Seleccionar elemento 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="Cobros">
+                                                    <ui:SelectItem.Items>
+                                                      <scg:List x:TypeArguments="x:String" Capacity="64">
+                                                        <x:String>Seleccione uno</x:String>
+                                                        <x:String>1565</x:String>
+                                                        <x:String>1567</x:String>
+                                                        <x:String>Cobros</x:String>
+                                                        <x:String>GdS</x:String>
+                                                        <x:String>R&amp;F</x:String>
+                                                        <x:String>Soporte y Configuración</x:String>
+                                                        <x:String>CAT</x:String>
+                                                        <x:String>Defensor al Cliente</x:String>
+                                                        <x:String>BO-1565</x:String>
+                                                        <x:String>BO-R&amp;F</x:String>
+                                                        <x:String>BO-GdS</x:String>
+                                                        <x:String>BO-Soporte y Configuración</x:String>
+                                                        <x:String>BO-Defensor al Cliente</x:String>
+                                                        <x:String>Emisión 1565</x:String>
+                                                        <x:String>Emisión 1567</x:String>
+                                                        <x:String>Emisión R&amp;F</x:String>
+                                                        <x:String>Emisión GdS</x:String>
+                                                        <x:String>Emisión Soporte y Configuración</x:String>
+                                                        <x:String>Emisión Defensor al Cliente</x:String>
+                                                        <x:String>Sistemas (Cargas masivas/acciones internas)</x:String>
+                                                        <x:String>Vacío</x:String>
+                                                        <x:String>1565-Provisión</x:String>
+                                                        <x:String>Automático</x:String>
+                                                        <x:String>Activaciones</x:String>
+                                                        <x:String>Área Cliente</x:String>
+                                                        <x:String>Tesorería</x:String>
+                                                        <x:String>Retrocesión</x:String>
+                                                        <x:String>Fidelización Recepción</x:String>
+                                                        <x:String>Retención</x:String>
+                                                        <x:String>Reclamaciones</x:String>
+                                                        <x:String>Riesgo</x:String>
+                                                        <x:String>Redes Sociales</x:String>
+                                                        <x:String>Infancia</x:String>
+                                                      </scg:List>
+                                                    </ui:SelectItem.Items>
+                                                    <ui:SelectItem.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ca6d6b04-4849-4509-ba3a-99a77a16b0dd" InformativeScreenshot="857a1a147e8ea19b8c0927fd5fd38ac8" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id/*' tag='IFRAME' /&gt;&lt;webctrl name='recordArea' tag='SELECT' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:SelectItem.Target>
+                                                  </ui:SelectItem>
+                                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayAfter="1000" DisplayName="Seleccionar elemento 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_4" Item="Gestionado">
+                                                    <ui:SelectItem.Items>
+                                                      <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                        <x:String>Seleccione uno</x:String>
+                                                      </scg:List>
+                                                    </ui:SelectItem.Items>
+                                                    <ui:SelectItem.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ca6d6b04-4849-4509-ba3a-99a77a16b0dd" InformativeScreenshot="8071b2774d4427f7f42c6133013495f1" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id/*' tag='IFRAME' /&gt;&lt;webctrl tag='SELECT' name='recordClose' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:SelectItem.Target>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:SelectItem>
+                                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayAfter="1000" DisplayName="Seleccionar elemento 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_5" Item="Llamada">
+                                                    <ui:SelectItem.Items>
+                                                      <scg:List x:TypeArguments="x:String" Capacity="8">
+                                                        <x:String>Seleccione uno</x:String>
+                                                        <x:String>Llamada</x:String>
+                                                        <x:String>Fax</x:String>
+                                                        <x:String>Email</x:String>
+                                                        <x:String>Carta</x:String>
+                                                        <x:String>Interno</x:String>
+                                                        <x:String>Proceso Automático</x:String>
+                                                        <x:String>Automático</x:String>
+                                                      </scg:List>
+                                                    </ui:SelectItem.Items>
+                                                    <ui:SelectItem.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ca6d6b04-4849-4509-ba3a-99a77a16b0dd" InformativeScreenshot="d5b6b0f909bd8ed2f4ab026e619a08c0" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id/*' tag='IFRAME' /&gt;&lt;webctrl tag='SELECT' name='recordMedia' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:SelectItem.Target>
+                                                  </ui:SelectItem>
+                                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayAfter="1000" DisplayName="Seleccionar elemento 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_6" Item="[caso(&quot;SUBMOTIVO1&quot;)]">
+                                                    <ui:SelectItem.Items>
+                                                      <scg:List x:TypeArguments="x:String" Capacity="16">
+                                                        <x:String>Seleccione uno</x:String>
+                                                        <x:String>Compromiso de Pago</x:String>
+                                                        <x:String>Confirmación de Pago</x:String>
+                                                        <x:String>Consulta</x:String>
+                                                        <x:String>Llamada Saliente</x:String>
+                                                        <x:String>No Procede Transferencia</x:String>
+                                                        <x:String>Pago</x:String>
+                                                        <x:String>Solicitudes Administrativas</x:String>
+                                                        <x:String>Transferencia</x:String>
+                                                        <x:String>Transferencia Agente Virtual</x:String>
+                                                      </scg:List>
+                                                    </ui:SelectItem.Items>
+                                                    <ui:SelectItem.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ca6d6b04-4849-4509-ba3a-99a77a16b0dd" InformativeScreenshot="3161488c496b9df315d7eb89db0dfe8c" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id/*' tag='IFRAME' /&gt;&lt;webctrl tag='SELECT' name='recordSubreason1' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:SelectItem.Target>
+                                                  </ui:SelectItem>
+                                                  <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Establecer texto 'TEXTAREA  id4a'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SetValue_3" Text="[caso(&quot;Comentario&quot;)]">
+                                                    <ui:SetValue.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="782aa6d4-3932-4bbf-89eb-ddf7b8d4cd68" InformativeScreenshot="4d6dd8d90b5a18f3dc66022768e046c2" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id/*' tag='IFRAME' /&gt;&lt;webctrl tag='TEXTAREA' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:SetValue.Target>
+                                                  </ui:SetValue>
+                                                  <Delay DisplayName="Retraso" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="359,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                                                  <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayAfter="1000" DisplayName="Seleccionar elemento 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_7" Item="[caso(&quot;SUBMOTIVO2&quot;)]">
+                                                    <ui:SelectItem.Items>
+                                                      <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                        <x:String>Seleccione uno</x:String>
+                                                      </scg:List>
+                                                    </ui:SelectItem.Items>
+                                                    <ui:SelectItem.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ca6d6b04-4849-4509-ba3a-99a77a16b0dd" InformativeScreenshot="23406239e445e4c54ecdab6d87606397" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id/*' tag='IFRAME' /&gt;&lt;webctrl tag='SELECT' name='recordSubreason2' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:SelectItem.Target>
+                                                  </ui:SelectItem>
+                                                  <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Comprobar 'INPUT  id51'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_3">
+                                                    <ui:Check.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3956651f-0b22-45b0-84f8-46bd93c8277b" InformativeScreenshot="48593d5d9e4e4e6315d648305ecd5a30" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id/*' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='checkbox' name='connectionToCrm' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:Check.Target>
+                                                  </ui:Check>
+                                                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'INPUT  id53'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                    <ui:Click.CursorPosition>
+                                                      <ui:CursorPosition Position="Center">
+                                                        <ui:CursorPosition.OffsetX>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:CursorPosition.OffsetX>
+                                                        <ui:CursorPosition.OffsetY>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:CursorPosition.OffsetY>
+                                                      </ui:CursorPosition>
+                                                    </ui:Click.CursorPosition>
+                                                    <ui:Click.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e7cd3415-c8c4-42ef-a790-61b1fd7bd9a6" InformativeScreenshot="adc907a7995e1fb993306b2170c04dac" Selector="&lt;html app='chrome.exe' title='Centro Atencion al Cliente Jazztel' /&gt;&lt;webctrl src='/FichaCliente/cashingagency/product/id/*' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='button' name='submitButton' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:Click.Target>
+                                                  </ui:Click>
+                                                  <ui:UiElementExists Exists="{x:Null}" DisplayName="Elemento existente 'SPAN'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                                                    <ui:UiElementExists.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ab9e268d-4ac9-4aca-b574-1318ba379d8c" InformativeScreenshot="3a0ef3090b1b4d92fed976905b6f0bb1" Selector="&lt;html app='chrome.exe' title='https://fichacliente.jazztel.com/FichaCliente/CTIlogin/ActualizadaCampaniaOK' /&gt;&lt;webctrl tag='SPAN' aaname='Comunicación creada correctamente en* ' /&gt;">
+                                                        <ui:Target.TimeoutMS>
+                                                          <InArgument x:TypeArguments="x:Int32" />
+                                                        </ui:Target.TimeoutMS>
+                                                        <ui:Target.WaitForReady>
+                                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                        </ui:Target.WaitForReady>
+                                                      </ui:Target>
+                                                    </ui:UiElementExists.Target>
+                                                  </ui:UiElementExists>
+                                                </Sequence>
+                                              </ActivityAction>
+                                            </ui:WindowScope.Body>
+                                          </ui:WindowScope>
+                                        </Sequence>
+                                      </State.Entry>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">203,989.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <State.Transitions>
+                                        <Transition DisplayName="T6" sap2010:WorkflowViewState.IdRef="Transition_17">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                              <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                                              <av:PointCollection x:Key="ConnectorLocation">270,1050.5 270,1080.5 260,1080.5 260,1099.5</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Transition.Condition>
+                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Continuar" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+                                          </Transition.Condition>
+                                          <Transition.To>
+                                            <State x:Name="__ReferenceID7" DisplayName="OK" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_8">
+                                              <State.Entry>
+                                                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,221" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                                    <ui:MultipleAssign.AssignOperations>
+                                                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="x:String">[caso("IDESTADO")]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="x:String">10</InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                                          <ui:AssignOperation.To>
+                                                            <OutArgument x:TypeArguments="x:String">[caso("OBSERVACIONES")]</OutArgument>
+                                                          </ui:AssignOperation.To>
+                                                          <ui:AssignOperation.Value>
+                                                            <InArgument x:TypeArguments="x:String">
+                                                              <Literal x:TypeArguments="x:String" Value="" />
+                                                            </InArgument>
+                                                          </ui:AssignOperation.Value>
+                                                        </ui:AssignOperation>
+                                                      </scg:List>
+                                                    </ui:MultipleAssign.AssignOperations>
+                                                  </ui:MultipleAssign>
+                                                </Sequence>
+                                              </State.Entry>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">193,1099.5</av:Point>
+                                                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <State.Transitions>
+                                                <Transition DisplayName="T11" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_19">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                                      <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                                                      <av:PointCollection x:Key="ConnectorLocation">260,1160.5 260,1229.5</av:PointCollection>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Transition.To>
+                                                    <State x:Name="__ReferenceID2" DisplayName="Update BBDD" sap:VirtualizedContainerService.HintSize="604,1377" sap2010:WorkflowViewState.IdRef="State_9">
+                                                      <State.Entry>
+                                                        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="558,1017" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                                          <Sequence.Variables>
+                                                            <Variable x:TypeArguments="ui:DatabaseConnection" Name="connect" />
+                                                          </Sequence.Variables>
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:InterruptibleDoWhile Condition="[Continuar=False]" DisplayName="Hacer mientras" sap:VirtualizedContainerService.HintSize="516,925" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                                                            <ui:InterruptibleDoWhile.Body>
+                                                              <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="480,760" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="438,668" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                                                  <TryCatch.Try>
+                                                                    <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,441" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                      <ui:DatabaseConnect DatabaseConnection="[connect]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_4" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_ORANGE;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+                                                                      <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[connect]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_4" Sql="[&quot;update RPA_JAZZTEL set Fecha_Siebel=getdate(),observaciones='&quot;+caso(&quot;OBSERVACIONES&quot;)+&quot;',IDStado='&quot;+caso(&quot;IDESTADO&quot;)+&quot;' where ID='&quot;+caso(&quot;ID&quot;)+&quot;'&quot;]">
+                                                                        <ui:ExecuteNonQuery.Parameters>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                                                        </ui:ExecuteNonQuery.Parameters>
+                                                                      </ui:ExecuteNonQuery>
+                                                                      <ui:DatabaseDisconnect DatabaseConnection="[connect]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_4" />
+                                                                      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+                                                                        <Assign.To>
+                                                                          <OutArgument x:TypeArguments="x:Boolean">[Continuar]</OutArgument>
+                                                                        </Assign.To>
+                                                                        <Assign.Value>
+                                                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                                        </Assign.Value>
+                                                                      </Assign>
+                                                                    </Sequence>
+                                                                  </TryCatch.Try>
+                                                                  <TryCatch.Catches>
+                                                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                      <ActivityAction x:TypeArguments="s:Exception">
+                                                                        <ActivityAction.Argument>
+                                                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                                        </ActivityAction.Argument>
+                                                                        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_31">
+                                                                          <Assign.To>
+                                                                            <OutArgument x:TypeArguments="x:Boolean">[Continuar]</OutArgument>
+                                                                          </Assign.To>
+                                                                          <Assign.Value>
+                                                                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                                          </Assign.Value>
+                                                                        </Assign>
+                                                                      </ActivityAction>
+                                                                    </Catch>
+                                                                  </TryCatch.Catches>
+                                                                </TryCatch>
+                                                              </Sequence>
+                                                            </ui:InterruptibleDoWhile.Body>
+                                                          </ui:InterruptibleDoWhile>
+                                                        </Sequence>
+                                                      </State.Entry>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <av:Point x:Key="ShapeLocation">193,1229.5</av:Point>
+                                                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <State.Transitions>
+                                                        <Transition DisplayName="T13" sap2010:WorkflowViewState.IdRef="Transition_18">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                                              <x:Int32 x:Key="DestConnectionPointIndex">34</x:Int32>
+                                                              <av:PointCollection x:Key="ConnectorLocation">260,1290.5 260,1320.5 253.3,1320.5 253.3,1329.5</av:PointCollection>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Transition.To>
+                                                            <x:Reference>__ReferenceID0</x:Reference>
+                                                          </Transition.To>
+                                                        </Transition>
+                                                      </State.Transitions>
+                                                    </State>
+                                                  </Transition.To>
+                                                </Transition>
+                                              </State.Transitions>
+                                            </State>
+                                          </Transition.To>
+                                        </Transition>
+                                        <Transition DisplayName="T5" sap2010:WorkflowViewState.IdRef="Transition_38">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:PointCollection x:Key="ConnectorLocation">337,1020 367,1020 367,1036.5 492,1036.5</av:PointCollection>
+                                              <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
+                                              <x:Int32 x:Key="DestConnectionPointIndex">73</x:Int32>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Transition.To>
+                                            <x:Reference>__ReferenceID1</x:Reference>
+                                          </Transition.To>
+                                          <Transition.Condition>[Continuar=False]</Transition.Condition>
+                                        </Transition>
+                                      </State.Transitions>
+                                    </State>
+                                  </Transition.To>
+                                </Transition>
+                              </State.Transitions>
+                            </State>
+                          </Transition.To>
+                        </Transition>
+                        <Transition DisplayName="T18" sap2010:WorkflowViewState.IdRef="Transition_26">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:PointCollection x:Key="ConnectorLocation">327,626.95 357,626.95 357,520.5 492,520.5</av:PointCollection>
+                              <x:Int32 x:Key="SrcConnectionPointIndex">32</x:Int32>
+                              <x:Int32 x:Key="DestConnectionPointIndex">25</x:Int32>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Transition.To>
+                            <x:Reference>__ReferenceID1</x:Reference>
+                          </Transition.To>
+                          <Transition.Condition>[cuscode.Contains(caso("Cuscode").ToString)=False and ExistTelefono=True]</Transition.Condition>
+                        </Transition>
+                        <Transition DisplayName="T8" sap2010:WorkflowViewState.IdRef="Transition_40">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:PointCollection x:Key="ConnectorLocation">193,636.1 163,636.1 163,676.1 157,676.1</av:PointCollection>
+                              <x:Int32 x:Key="SrcConnectionPointIndex">45</x:Int32>
+                              <x:Int32 x:Key="DestConnectionPointIndex">44</x:Int32>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Transition.Condition>[ExistTelefono=False]</Transition.Condition>
+                          <Transition.To>
+                            <State x:Name="__ReferenceID10" DisplayName="No existe telelfno" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_18">
+                              <State.Entry>
+                                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[caso("IDESTADO")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">14</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[caso("OBSERVACIONES")]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">Cliente Prospecto sin productos</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </State.Entry>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">23,639.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <State.Transitions>
+                                <Transition DisplayName="T9" sap2010:WorkflowViewState.IdRef="Transition_39">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:PointCollection x:Key="ConnectorLocation">90,700.5 90,1199.5 219.8,1199.5 219.8,1229.5</av:PointCollection>
+                                      <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                      <x:Int32 x:Key="DestConnectionPointIndex">14</x:Int32>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Transition.To>
+                                    <x:Reference>__ReferenceID2</x:Reference>
+                                  </Transition.To>
+                                </Transition>
+                              </State.Transitions>
+                            </State>
+                          </Transition.To>
+                        </Transition>
+                      </State.Transitions>
+                    </State>
+                  </Transition.To>
+                </Transition>
+              </State.Transitions>
+            </State>
+          </Transition.To>
+        </Transition>
+        <Transition DisplayName="T16" sap2010:WorkflowViewState.IdRef="Transition_24">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">317,246.1 347,246.1 347,348.5 492,348.5</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">44</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">9</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID1</x:Reference>
+          </Transition.To>
+          <Transition.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="caso(&quot;Cuscode&quot;).ToString&lt;&gt;cuscode and Reintento&gt;=5 and NoExsiteDNI=False" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_3" />
+          </Transition.Condition>
+        </Transition>
+        <Transition DisplayName="T7" sap2010:WorkflowViewState.IdRef="Transition_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">223.2,270.5 223.2,300 153,300 153,240 183,240</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">23</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">37</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID3</x:Reference>
+          </Transition.To>
+          <Transition.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="caso(&quot;Cuscode&quot;).ToString&lt;&gt;cuscode and Reintento&lt;5 and NoExsiteDNI=False" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_4" />
+          </Transition.Condition>
+        </Transition>
+        <Transition DisplayName="T1" sap2010:WorkflowViewState.IdRef="Transition_37">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">183,224.75 76.7,224.75 76.7,269.5</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">17</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">42</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.Condition>
+            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="NoExsiteDNI=True" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_5" />
+          </Transition.Condition>
+          <Transition.To>
+            <State x:Name="__ReferenceID9" DisplayName="No existe" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_17">
+              <State.Entry>
+                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[caso("IDESTADO")]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">13</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[caso("OBSERVACIONES")]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">No existe</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </State.Entry>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">3,269.5</av:Point>
+                  <av:Size x:Key="ShapeSize">134,61</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <State.Transitions>
+                <Transition DisplayName="T10" sap2010:WorkflowViewState.IdRef="Transition_36">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">63.3,330.5 63.3,360.5 3.3,360.5 3.3,1269.15 193,1269.15</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">35</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">49</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <x:Reference>__ReferenceID2</x:Reference>
+                  </Transition.To>
+                </Transition>
+              </State.Transitions>
+            </State>
+          </Transition.To>
+        </Transition>
+      </State.Transitions>
+    </State>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <State x:Name="__ReferenceID11" DisplayName="Reintento" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_12">
+      <State.Entry>
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="418,533" sap2010:WorkflowViewState.IdRef="Sequence_35">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,341" sap2010:WorkflowViewState.IdRef="Sequence_34">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="ui:DatabaseConnection" Name="connect" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:DatabaseConnect DatabaseConnection="[connect]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_3" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=MKTCRM;Initial Catalog=RPA_ORANGE;Persist Security Info=True;User ID=sa;Password=Lrnas03m01" />
+            <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[connect]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_3" Sql="update notificar set Ultima_Fecha=getdate(), notificado='N'">
+              <ui:ExecuteNonQuery.Parameters>
+                <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              </ui:ExecuteNonQuery.Parameters>
+            </ui:ExecuteNonQuery>
+            <ui:DatabaseDisconnect DatabaseConnection="[connect]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_3" />
+          </Sequence>
+          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[Reintento]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </State.Entry>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">193,99.5</av:Point>
+          <av:Size x:Key="ShapeSize">134,61</av:Size>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State.Transitions>
+        <Transition DisplayName="T15" sap2010:WorkflowViewState.IdRef="Transition_25">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">46</x:Int32>
+              <av:PointCollection x:Key="ConnectorLocation">260,160.5 260,190.5 263.4,190.5 263.4,209.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID3</x:Reference>
+          </Transition.To>
+        </Transition>
+      </State.Transitions>
+    </State>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+    <x:Reference>__ReferenceID10</x:Reference>
+    <StateMachine.Variables>
+      <Variable x:TypeArguments="x:String" Name="cuscode" />
+      <Variable x:TypeArguments="x:String" Name="ObtenerTexto" />
+      <Variable x:TypeArguments="x:Boolean" Name="Continuar" />
+      <Variable x:TypeArguments="x:Int32" Name="Reintento" />
+      <Variable x:TypeArguments="x:Boolean" Name="errorTipificar" />
+      <Variable x:TypeArguments="x:Boolean" Name="NoExsiteDNI" />
+      <Variable x:TypeArguments="x:Boolean" Name="ExistTelefono" />
+    </StateMachine.Variables>
+  </StateMachine>
+</Activity>

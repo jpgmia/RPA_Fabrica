@@ -1,0 +1,200 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CerrarOrden" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1054,1079" sap2010:WorkflowViewState.IdRef="CerrarOrden_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="21">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CerrarOrden" sap:VirtualizedContainerService.HintSize="460,974" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="booOrdenAbierta" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="418,882" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,617" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activar Vodafone" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Activate_1">
+              <ui:Activate.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a333ad31-43e0-43e3-bc36-179dedc619ab" InformativeScreenshot="f11caf5914c6ae797e970991f671580a" Selector="&lt;wnd app='wfica32.exe' /&gt;" TimeoutMS="5000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Activate.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:Activate>
+            <ui:ImageFound DisplayName="Cerrar Ventana" Found="[booOrdenAbierta]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ImageFound_2">
+              <ui:ImageFound.Image>
+                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAANCAYAAADi+J2zAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVEhL7ZHBDcMwCEW9WjdIZqi6QdfoHN0g527QBbqLK5CQvr4IIdSXqDk8yQYMPLk9X59e4Xp/uOcq2GOZL/19m37iFGOyYq01F677SzF8l4lrDpvvISvmIYtwLBLTRUmC78xwMRyIWN5q8C5siemy1FPw6oRDiQnY08sbKobFa9hQIxKzM8ey/Yb9mPeAsaFGRSxiSwx38e7MIcRwj0xcc9h8D5GYh+XXiMQqDBercoqlmPoX981RW4vymQgAAAAASUVORK5CYII=" />
+              </ui:ImageFound.Image>
+              <ui:ImageFound.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5c599e1a-c4ba-4b10-98a3-81b29b6112f6" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Vodafone Customer Interaction Manager - \\Remota' /&gt;" TimeoutMS="850" WaitForReady="COMPLETE" />
+              </ui:ImageFound.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ImageFound>
+            <If Condition="[booOrdenAbierta]" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <ui:ClickImage DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Cerrar Imagen" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:ClickImage.CursorPosition>
+                    <ui:CursorPosition OffsetX="14" Position="Center">
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:ClickImage.CursorPosition>
+                  <ui:ClickImage.Image>
+                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAWCAYAAABwvpo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADhSURBVFhH7ZLNDcIwDIWzGhvADIhD76zBHGzAmQ1YoLsEvYPRw7hpGtIfNT58Uuy4T86nhq7rYsuE+7OPLeMCuDhfb1WYK+9xOlRB8sCPAK5L4IzaeVj+dTn+hQtwARsREEIw0XMuICGAv8vpg80IsMDCupcSAPRjda1ZTQAvxsi9zHANxgQAnQmsObBLAYAzrXthkgAOHYLnQUqAnHUvN2/xP8AK1vA8KBGQYkwA72LVml0J4D1y+mCSgBJSAizkfoiUgBJWE1CKC3ABLuBzXkRADebKw/I1kDzwJaA9+vgGRhRdmwniiWcAAAAASUVORK5CYII=" />
+                  </ui:ClickImage.Image>
+                  <ui:ClickImage.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="a5f13662-b6d1-4655-91de-b09ba2f7bbab" TimeoutMS="300" WaitForReady="COMPLETE" />
+                  </ui:ClickImage.Target>
+                </ui:ClickImage>
+              </If.Then>
+            </If>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" ContinueOnError="True" DelayMS="400" DisplayName="Guardar Cambios" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target Element="{x:Null}" Id="5ecbe5f4-2ce6-47d8-87da-3e13f8c23de1" InformativeScreenshot="d344e70f30a1efc64af328d21d007555" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Guardar Formulario - \\Remota' /&gt;" TimeoutMS="200">
+                  <ui:Target.ClippingRegion>
+                    <ui:Region Rectangle="250, 89, 47, 25" />
+                  </ui:Target.ClippingRegion>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:Click>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" ContinueOnError="True" DisplayName="Guardar Cambios" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target Element="{x:Null}" Id="5ecbe5f4-2ce6-47d8-87da-3e13f8c23de1" InformativeScreenshot="050f917fa8f9bddf40b144b44eef8b91" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Mensaje - \\Remota' /&gt;" TimeoutMS="300">
+                  <ui:Target.ClippingRegion>
+                    <ui:Region Rectangle="122, 82, 36, 27" />
+                  </ui:Target.ClippingRegion>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:Click>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean">
+          <ui:ImageFound DisplayName="Cerrar Ventana" Found="[booOrdenAbierta]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ImageFound_3">
+            <ui:ImageFound.Image>
+              <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAABDQAAAIrCAYAAAAQvskOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA66SURBVHhe7dvBasJAAEXR/G6+rWTVH8vSXUqgA7XVUm0p3ngOvIVBd4MjF5xOp9NmZs+9dV2/bFiW5ez5+MzL8vr+Dvi5/dzcc+7MzMxu2eA+MTv2BA0zu/jlMAga/CVBw8zM/mOD+8Ts2BM0zOzil8PwXdAwu2f3nDszM7NbNrhPzI696dJDM7PxI+Ba0DD77T6eq7Fr587MzOyWuU/MnmOChpmZmZmZmZnlJmiYmZmZmZmZWW7TPM9nD/bXZmZmZmZmZmaPvGn/f9nnoAEAAADwyAQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIEfQAAAAAHIEDQAAACBH0AAAAAByBA0AAAAgR9AAAAAAcgQNAAAAIGbb3gBCevrSs17CFQAAAABJRU5ErkJggg==" />
+            </ui:ImageFound.Image>
+            <ui:ImageFound.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5c599e1a-c4ba-4b10-98a3-81b29b6112f6" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Vodafone Customer Interaction Manager - \\Remota' /&gt;" TimeoutMS="850" WaitForReady="COMPLETE" />
+            </ui:ImageFound.Target>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ImageFound>
+        </ActivityFunc>
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+  </Sequence>
+</Activity>
